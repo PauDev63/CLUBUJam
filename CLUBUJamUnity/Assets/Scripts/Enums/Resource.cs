@@ -1,4 +1,4 @@
 public enum Resource
 {
-    Wheat, Mud, Sand, Flour, Water
+    None, Wheat, Mud, Sand, Flour, Water
 }
