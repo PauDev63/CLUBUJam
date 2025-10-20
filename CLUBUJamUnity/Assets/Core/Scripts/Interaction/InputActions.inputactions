@@ -1,0 +1,95 @@
+{
+    "version": 1,
+    "name": "InputActions",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "22a6100b-dae5-4287-8265-417b151c7c23",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "717463eb-3c37-40d3-9bf2-bc15e2c6ece5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Zoom",
+                    "type": "Value",
+                    "id": "387a8133-a290-4032-a709-e7d10d0ca321",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "CursorPosition",
+                    "type": "Value",
+                    "id": "6244ce8f-6e08-4bf6-8c4c-0200f2bf0648",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Drag",
+                    "type": "Value",
+                    "id": "d61afb33-cee0-4591-9146-87a7faecd8fa",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "67500be4-b930-46f8-bb84-35cd4dee3f4b",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Tap,Hold(duration=0.2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b90662aa-7476-4574-9833-76f3fcbeab61",
+                    "path": "<Mouse>/scroll",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zoom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a0d52cf0-1c2c-4f60-b76f-f793dddc9d2e",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CursorPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7c52bdc4-7ab6-4483-b9ed-f5ee5e957b33",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drag",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

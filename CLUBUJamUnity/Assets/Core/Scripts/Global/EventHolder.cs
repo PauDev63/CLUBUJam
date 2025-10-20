@@ -7,6 +7,8 @@ public class EventHolder : MonoBehaviour
     public static EventHolder Instance;
 
     [NonSerialized] public UnityEvent onTick;
+    [NonSerialized] public UnityEvent onInteract;
+    [NonSerialized] public UnityEvent onZoomChange;
 
     void Awake()
     {
@@ -16,5 +18,7 @@ public class EventHolder : MonoBehaviour
             Destroy(gameObject);
 
         onTick = new UnityEvent();
+        onInteract = new UnityEvent();
+        onZoomChange = new UnityEvent();
     }
 }
