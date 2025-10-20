@@ -34,7 +34,7 @@ public class ResourcesManager : MonoBehaviour
         else
             _resourcesDictionary.Add(resource, quantity);
 
-        Debug.Log("Player has x" + _resourcesDictionary[resource] + " " + resource.ToString());
+        //Debug.Log("Player has x" + _resourcesDictionary[resource] + " " + resource.ToString());
     }
 
     public void SubtractResource(Resource resource, int quantity)

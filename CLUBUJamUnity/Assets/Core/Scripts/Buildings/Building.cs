@@ -53,6 +53,6 @@ public class Building : MonoBehaviour
             ResourcesManager.Instance.SubtractResource(_generation[_upgradeLevel - 1].resourcesRequiredForUpgrading[i], _generation[_upgradeLevel - 1].quantitiesRequiredForUpgrading[i]);
         }
         _upgradeLevel++;
-        Debug.Log($"Building {gameObject.name} has been upgraded to level {_upgradeLevel}.");
+        //Debug.Log($"Building {gameObject.name} has been upgraded to level {_upgradeLevel}.");
     }
 }
