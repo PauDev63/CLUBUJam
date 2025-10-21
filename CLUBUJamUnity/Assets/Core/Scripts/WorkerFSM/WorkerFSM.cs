@@ -1,26 +1,55 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
+using UnityEngine.AI;
 
 public class WorkerFSM : FSMTemplateMachine
 {
     public Idle idleState;
     public Walking walkingState;
     public Working workingState;
+    public Fetch fetchingState;
+    public Drop droppingState;
 
     [Header("Working Settings")]
     [SerializeField] private float _progress;
     [SerializeField] private float _progressSpeed;
+    [SerializeField] private float _targetDistanceToBeOnDestination;
     [SerializeField] private Building _targetBuilding;
+    [SerializeField] private Transform _townHall;
+
+    [Header("Idling Settings")]
+    [SerializeField] private float _minIdlingTime;
+    [SerializeField] private float _maxIdlingTime;
+
+    [SerializeField] private Vector3 _targetDestination;
 
     public float Progress { get { return _progress; } set { _progress = value; } }
     public float ProgressSpeed { get { return _progressSpeed; } set { _progressSpeed = value; } }
     public Building TargetBuilding { get { return _targetBuilding; } }
+    public Vector3 TargetDestination { get { return _targetDestination; } }
+
+    public float MinIdlingTime { get { return _minIdlingTime; } }
+    public float MaxIdlingTime { get { return _maxIdlingTime; } }
+
+    public bool HasWork { get { return taskQueue.Count > 0; } }
 
     private Queue<Task> taskQueue;
     private Task currentTask;
+    private TaskStep currentTaskStep;
     [SerializeField] private int _maxQueuedTasks = 3;
     [SerializeField] private int _workerHealth = 10;
-    private Resource currentResource;
+    [SerializeField] private Resource currentResource;
+
+    public bool doNextTaskStep;
+    private bool hasWorkedDuringThisTask;
+    public bool HasWorkedDuringThisTask { get { return hasWorkedDuringThisTask; } }
+
+    private NavMeshAgent navMeshAgent;
+    public NavMeshAgent NavMeshAgent { get { return navMeshAgent; } }
+
+    public TaskStep CurrentTaskStep { get { return currentTaskStep; } }
+    public Resource CurrentResource { get { return currentResource; } set { currentResource = value; } }
 
 
     private void Awake()
@@ -28,10 +57,14 @@ public class WorkerFSM : FSMTemplateMachine
         idleState = new Idle(this);
         walkingState = new Walking(this);
         workingState = new Working(this);
+        fetchingState = new Fetch(this);
+        droppingState = new Drop(this);
 
         taskQueue = new Queue<Task>();
         currentTask = null;
         currentResource = Resource.None;
+
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     protected override void GetInitialState(out FSMTemplateState stateMachine)
@@ -46,7 +79,6 @@ public class WorkerFSM : FSMTemplateMachine
         }
     }
 
-
     public bool CanQueue(){
         return taskQueue.Count < _maxQueuedTasks;
     }
@@ -55,8 +87,10 @@ public class WorkerFSM : FSMTemplateMachine
 
         if(CanQueue()){
             taskQueue.Enqueue(newTask);
-        }
-        
+
+            if (currentTask == null)
+                DoTask();
+        }        
     }
 
     public void UnqueueTask(){
@@ -72,46 +106,86 @@ public class WorkerFSM : FSMTemplateMachine
             UnqueueTask();
         }
 
-        
-        // get task step (task as an array of TaskStep)
-        for(int i = 0; i < currentTask.steps.Length; i++){
-            DoTaskStep(currentTask.steps[i]);
+        StartCoroutine(ExecuteTaskStepByStep());
+    }
+
+    IEnumerator ExecuteTaskStepByStep()
+    {
+        hasWorkedDuringThisTask = false;
+
+        //get task step (task as an array of TaskStep)
+        if(_targetBuilding.QuantityNeeded > 0)
+        {
+            if(_targetBuilding.QuantityGenerated != 0)
+            {
+                for (int i = 0; i < currentTask.resourcesNeededSteps.Length; i++)
+                {
+                    currentTaskStep = currentTask.resourcesNeededSteps[i];
+                    DoTaskStep();
+                    yield return new WaitUntil(() => doNextTaskStep); // WaitUntilTheTaskStepIsDone
+                    doNextTaskStep = false;
+                }
+            }
+        }
+
+        if (_targetBuilding.QuantityGenerated != 0)
+        {
+            for (int i = 0; i < currentTask.workingSteps.Length; i++)
+            {
+            currentTaskStep = currentTask.workingSteps[i];
+            DoTaskStep();
+            yield return new WaitUntil(() => doNextTaskStep); // WaitUntilTheTaskStepIsDone
+            doNextTaskStep = false;
+            }
+        }
+
+        hasWorkedDuringThisTask = true;
+
+        //get task step (task as an array of TaskStep)
+        for (int i = 0; i < currentTask.resourcesGeneratedSteps.Length; i++)
+        {
+            currentTaskStep = currentTask.resourcesGeneratedSteps[i];
+            DoTaskStep();
+            yield return new WaitUntil(() => doNextTaskStep); // WaitUntilTheTaskStepIsDone
+            doNextTaskStep = false;
         }
 
         StopCurrentTask();
-
     }
 
-    public void DoTaskStep(TaskStep step){
+    public void DoTaskStep(){
         
-        switch(step){
-            case TaskStep.MoveTowards:
-                // go to targetBuilding
-                break;
+        switch(currentTaskStep){
             case TaskStep.Fetch:
-                // set currentResource to the Generated / UpgradingRequired / GenerationRequired
+                if(hasWorkedDuringThisTask)
+                    _targetDestination = _targetBuilding.transform.position;
+                else
+                    _targetDestination = _townHall.position;
                 break;
             case TaskStep.Work:
-                // works for X time on building
+                _targetDestination = _targetBuilding.transform.position;
                 LowerHealth();
                 break;
             case TaskStep.Drop:
-                // leave the currentResource on town hall
+                if (hasWorkedDuringThisTask)
+                    _targetDestination = _townHall.position;
+                else
+                    _targetDestination = _targetBuilding.transform.position;
                 LowerHealth();
                 break;
             case TaskStep.Return:
-                // go to town hall
+                _targetDestination = _townHall.position;
                 break;
             default:
                 Debug.Log("Couldn't process task step");
                 break;
-        }
-
-        
+        }        
+        navMeshAgent.SetDestination( _targetDestination );  
     }
 
     public void StopCurrentTask(){
         currentTask = null;
+        currentTaskStep = TaskStep.None;
         
         if(currentResource != Resource.None){
             // leaves resource it at the town hall
@@ -124,6 +198,17 @@ public class WorkerFSM : FSMTemplateMachine
         }else{
             // Idle
         }
+    }
+
+    public bool IsOnDestination()
+    {
+        if(_targetDestination == null)
+            return false;
+
+        if (Vector3.Distance(transform.position, _targetDestination) <= _targetDistanceToBeOnDestination)
+            return true;
+
+        return false;
     }
 
 
@@ -159,5 +244,14 @@ public class WorkerFSM : FSMTemplateMachine
 
     }
 
+    public void SetRandomDestination()
+    {
+        //Change this to random destination
+        _targetDestination = Vector3.right * -5f;
+    }
 
+    public void SetNewDestination()
+    {
+        doNextTaskStep = true;
+    }
 }

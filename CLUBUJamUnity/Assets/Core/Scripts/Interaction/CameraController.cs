@@ -57,7 +57,6 @@ public class CameraController : MonoBehaviour
         if(transform.position.y <= _minZoomHeight && InteractionManager.Instance.ZoomLevel > 0 || transform.position.y >= _maxZoomHeight && InteractionManager.Instance.ZoomLevel < 0)
             return;
 
-        //_cam.fieldOfView = Mathf.Clamp(_cam.fieldOfView + InteractionManager.Instance.ZoomLevel * _zoomSpeed * Time.deltaTime, _minFOV, _maxFOV);
         transform.Translate(transform.forward * InteractionManager.Instance.ZoomLevel * _zoomSpeed * Time.deltaTime, Space.World);
 
         //Clamp "zoom" between two values

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80682fc7ead221144a715e1865644b3f, type: 3}
   m_Name: Watermill_Level_1
   m_EditorClassIdentifier: 
-  resourcesRequiredForGeneration: 00000000
+  resourcesRequiredForGeneration: 01000000
   quantitiesRequiredForGeneration: 01000000
-  resourcesRequiredForUpgrading: 03000000
+  resourcesRequiredForUpgrading: 01000000
   quantitiesRequiredForUpgrading: 05000000
-  resourceGenerated: 3
+  resourceGenerated: 4
   quantityGenerated: 1
