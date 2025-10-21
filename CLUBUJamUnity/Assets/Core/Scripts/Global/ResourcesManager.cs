@@ -57,9 +57,14 @@ public class ResourcesManager : MonoBehaviour
 
     public bool HasEnough(Resource resource, int quantity)
     {
-        if(_resourcesDictionary.ContainsKey(resource))
+        if (_resourcesDictionary.ContainsKey(resource))
             return _resourcesDictionary[resource] >= quantity;
         return false;
+    }
+    
+    public int GetResourceQuantity(Resource resource)
+    {
+        return _resourcesDictionary[resource];
     }
 
 }

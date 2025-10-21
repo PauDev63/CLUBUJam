@@ -9,7 +9,7 @@ public class Walking : WorkerStateTemplate
 
     public override void Enter()
     {
-        Debug.Log("Walking: enter");
+        //Debug.Log("Walking: enter");
         _workerFSM.NavMeshAgent.SetDestination(_workerFSM.TargetDestination);
         if (_workerFSM.NavMeshAgent.isStopped)
             _workerFSM.NavMeshAgent.isStopped = false;
@@ -44,7 +44,7 @@ public class Walking : WorkerStateTemplate
 
     public override void Exit()
     {
-        Debug.Log("Walking: exit");
+        //Debug.Log("Walking: exit");
         _workerFSM.NavMeshAgent.isStopped = true;
     }
 }

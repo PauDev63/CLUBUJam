@@ -36,7 +36,7 @@ public class Working : WorkerStateTemplate
         Debug.Log("Working: exit");
         EventHolder.Instance.onTick.RemoveListener(Work);
         _workerFSM.Progress = 0;
-        _workerFSM.TargetBuilding.GenerateResource();
+        _workerFSM.TargetBuilding.DoEffectAfterWork();
     }
 
     private void Work() 
