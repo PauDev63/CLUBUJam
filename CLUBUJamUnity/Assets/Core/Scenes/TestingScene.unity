@@ -514,7 +514,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1d1d3fb30a2d3b44a80634bb73c7f4f7, type: 2}
   - {fileID: 11400000, guid: 7fb0f967fa986254f854b5c54ab4a28d, type: 2}
   _upgradeLevel: 1
-  _task: {fileID: 11400000, guid: de70d8a991b463548bfad4176e9b5a57, type: 2}
   _workerFSM: {fileID: 703629834}
   quantitiesDropped: 
   quantityGenerated: 0
@@ -577,7 +576,7 @@ GameObject:
   - component: {fileID: 703629831}
   - component: {fileID: 703629834}
   - component: {fileID: 703629835}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WorkerFSM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -773,7 +772,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1d1d3fb30a2d3b44a80634bb73c7f4f7, type: 2}
   - {fileID: 11400000, guid: 7fb0f967fa986254f854b5c54ab4a28d, type: 2}
   _upgradeLevel: 1
-  _task: {fileID: 11400000, guid: de70d8a991b463548bfad4176e9b5a57, type: 2}
   _workerFSM: {fileID: 703629834}
   quantitiesDropped: 
   quantityGenerated: 0

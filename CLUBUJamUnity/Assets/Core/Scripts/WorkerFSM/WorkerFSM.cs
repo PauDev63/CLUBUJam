@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.AI;
 
-public class WorkerFSM : FSMTemplateMachine
+public class WorkerFSM : FSMTemplateMachine, IInteractable
 {
     public Idle idleState;
     public Walking walkingState;
@@ -52,6 +52,7 @@ public class WorkerFSM : FSMTemplateMachine
     public Resource CurrentResource { get { return currentResource; } set { currentResource = value; } }
 
 
+
     private void Awake()
     {
         idleState = new Idle(this);
@@ -65,6 +66,7 @@ public class WorkerFSM : FSMTemplateMachine
         currentResource = Resource.None;
 
         navMeshAgent = GetComponent<NavMeshAgent>();
+
     }
 
     protected override void GetInitialState(out FSMTemplateState stateMachine)
@@ -112,6 +114,8 @@ public class WorkerFSM : FSMTemplateMachine
     IEnumerator ExecuteTaskStepByStep()
     {
         hasWorkedDuringThisTask = false;
+        Debug.Log($"Task: {currentTask}. Target Building: {currentTask.targetBuilding}");
+        _targetBuilding = currentTask.targetBuilding;
 
         //get task step (task as an array of TaskStep)
         if(_targetBuilding.QuantityNeeded > 0)
@@ -212,38 +216,6 @@ public class WorkerFSM : FSMTemplateMachine
     }
 
 
-    // other methods: GoTo(), Fetch(), Drop(), Work() [check arguments]
-        // logica en los estados
-
-    public void MoveTowards(){
-        // Move towards town hall or target building
-    }
-
-    public void Fetch(){
-        // set currentResource to the Generated / UpgradingRequired / GenerationRequired
-            // un pick up del building
-
-        // logica en los estados
-
-        // if in town hall, use ResourcesManager.SubstractResource
-    }
-
-    public void Drop(){
-        // if in town hall, use ResourcesManager.AddResource
-
-        currentResource = Resource.None;
-    }
-
-    public void Work(){
-
-        // targetBuilding.GenerateResource();
-
-        // depende del tick
-
-        // if generated, currentResource = targetBuilding.generated
-
-    }
-
     public void SetRandomDestination()
     {
         //Change this to random destination
@@ -254,4 +226,12 @@ public class WorkerFSM : FSMTemplateMachine
     {
         doNextTaskStep = true;
     }
+
+    public void Interact()
+    {
+        //_workerFSM.QueueTask(_task);
+        Debug.Log("Worker selected");
+        CameraController.Instance.ActiveWorker = this;
+    }
+
 }

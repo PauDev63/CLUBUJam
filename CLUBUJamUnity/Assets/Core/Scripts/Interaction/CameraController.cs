@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CameraController : MonoBehaviour
+public class CameraController : MonoBehaviour //FSMTemplateMachine
 {
+    public static CameraController Instance;
+
     private Camera _cam;
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private float _minZoomHeight;
@@ -10,9 +12,22 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float _zoomSpeed;
     [SerializeField] private float _panSpeed;
 
+    private WorkerFSM activeWorker;
+    public WorkerFSM ActiveWorker { get { return activeWorker; } set { activeWorker = value; } }
+
+
+    void Awake()
+    {
+        if(Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
+
     void Start()
     {
         _cam = GetComponent<Camera>();
+        activeWorker = null;
 
         EventHolder.Instance.onInteract.AddListener(TryInteract);
         EventHolder.Instance.onZoomChange.AddListener(Zoom);
@@ -40,6 +55,21 @@ public class CameraController : MonoBehaviour
             }
         }
     }
+
+    /*private void Awake()
+    {
+        nonSelectedState = new nonSelected(this);
+        _cam = GetComponent<Camera>();
+
+        _activeWorker = null;
+
+    }
+
+    protected override void GetInitialState(out FSMTemplateState stateMachine)
+    {
+        stateMachine = nonSelectedState;
+    }*/
+
 
     void TryInteract()
     {

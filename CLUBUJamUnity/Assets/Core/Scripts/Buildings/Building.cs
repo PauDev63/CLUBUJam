@@ -13,10 +13,14 @@ public class Building : MonoBehaviour, IInteractable
     [SerializeField] private int quantityNeeded;
 
     public int QuantityGenerated { get { return quantityGenerated; } }
-    public int QuantityNeeded {  get { return quantityNeeded; } }
+    public int QuantityNeeded { get { return quantityNeeded; } }
+
+
 
     private void Start()
     {
+        _task = new Task(this);
+
         quantitiesDropped = new int[_generation[_upgradeLevel - 1].quantitiesRequiredForGeneration.Length];
         CalculateQuantitiesNeeded();
     }
@@ -29,7 +33,15 @@ public class Building : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        _workerFSM.QueueTask(_task);
+
+        if (CameraController.Instance.ActiveWorker != null)
+        {
+            CameraController.Instance.ActiveWorker.QueueTask(_task);
+            Debug.Log("Task assigned");
+        }
+        Debug.Log("Building interacted");
+        CameraController.Instance.ActiveWorker = null;
+        
     }
 
     public void GenerateResource()
