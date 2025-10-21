@@ -20,6 +20,16 @@ public class ResourcesManager : MonoBehaviour
         Initialize();
     }
 
+    private void Update()
+    {
+        string str = "";
+        foreach(KeyValuePair<Resource, int> keypair in _resourcesDictionary)
+        {
+            str += keypair.Key.ToString() + " x" + keypair.Value.ToString() + "\n";
+        }
+        Debug.Log(str);
+    }
+
     private void Initialize()
     {
         _resourcesDictionary = new Dictionary<Resource, int>();

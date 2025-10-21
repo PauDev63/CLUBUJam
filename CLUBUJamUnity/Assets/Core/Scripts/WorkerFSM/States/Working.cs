@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Working : FSMTemplateState
+public class Working : WorkerStateTemplate
 {
-    WorkerFSM _workerFSM;
+    bool hasEndedWorking;
 
     public Working(FSMTemplateMachine fsm) : base(fsm)
     {
@@ -11,17 +11,29 @@ public class Working : FSMTemplateState
 
     public override void Enter()
     {
+        Debug.Log("Working: enter");
+        hasEndedWorking = false;
         EventHolder.Instance.onTick.AddListener(Work);
     }
 
     public override void UpdateLogic()
     {
-        if(_workerFSM.Progress >= 100f)
-            _workerFSM.ChangeState(_workerFSM.idleState);
+        if (hasEndedWorking)
+            _workerFSM.ChangeState(_workerFSM.walkingState);
+    }
+
+    public override void UpdatePhysics()
+    {
+        if (_workerFSM.Progress >= 100f)
+        {
+            _workerFSM.SetNewDestination();
+            hasEndedWorking = true;
+        }
     }
 
     public override void Exit()
     {
+        Debug.Log("Working: exit");
         EventHolder.Instance.onTick.RemoveListener(Work);
         _workerFSM.Progress = 0;
         _workerFSM.TargetBuilding.GenerateResource();

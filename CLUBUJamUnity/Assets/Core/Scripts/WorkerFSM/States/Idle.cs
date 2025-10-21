@@ -1,14 +1,54 @@
-public class Idle : FSMTemplateState
+using UnityEngine;
+
+public class Idle : WorkerStateTemplate
 {
-    WorkerFSM _workerFSM;
+    private float _counter;
+    private float _stopTime;
 
     public Idle(FSMTemplateMachine fsm) : base(fsm)
     {
         _workerFSM = (WorkerFSM)fsm;
     }
 
+    public override void Enter()
+    {
+        Debug.Log("Idle: enter");
+        _stopTime = Random.Range(_workerFSM.MinIdlingTime, _workerFSM.MaxIdlingTime);
+    }
+
     public override void UpdateLogic()
     {
-        _workerFSM.ChangeState(_workerFSM.workingState);
+        if (!_workerFSM.IsOnDestination())
+        {
+            _workerFSM.ChangeState(_workerFSM.walkingState);
+        }
+        else 
+        {
+            switch (_workerFSM.CurrentTaskStep)
+            {
+                case TaskStep.Fetch:
+                    _workerFSM.ChangeState(_workerFSM.fetchingState);
+                    break;
+                case TaskStep.Work:
+                    _workerFSM.ChangeState(_workerFSM.workingState);
+                    break;
+            }
+        }
+    }
+
+    public override void UpdatePhysics()
+    {
+        _counter += Time.deltaTime;
+
+        if(_counter > _stopTime)
+        {
+            _workerFSM.SetRandomDestination();
+        }
+    }
+
+    public override void Exit()
+    {
+        Debug.Log("Idle: exit");
+        _counter = 0;
     }
 }

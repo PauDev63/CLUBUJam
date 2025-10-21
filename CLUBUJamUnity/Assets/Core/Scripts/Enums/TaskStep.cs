@@ -1,4 +1,4 @@
 public enum TaskStep
 {
-    MoveTowards, Fetch, Work, Drop, Return
+    None, Fetch, Work, Drop, Return
 }
