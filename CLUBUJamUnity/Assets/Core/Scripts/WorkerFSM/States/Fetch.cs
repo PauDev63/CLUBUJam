@@ -50,7 +50,7 @@ public class Fetch : WorkerStateTemplate
 
     public override void Exit()
     {
-        _workerFSM.SetNewDestination();
-
+        if(!goToIdle)
+            _workerFSM.SetNewDestination();
     }
 }

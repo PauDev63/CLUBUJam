@@ -12,6 +12,7 @@ public class Plot : Building
     private void ConstructBuilding()
     {
         Instantiate(_building, transform.position, Quaternion.identity, transform.parent);
+        _workerFSM.StopCurrentTask();
         Destroy(gameObject);
     }
 

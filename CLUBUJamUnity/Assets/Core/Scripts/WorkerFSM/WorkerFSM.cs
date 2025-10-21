@@ -26,7 +26,7 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
 
     public float Progress { get { return _progress; } set { _progress = value; } }
     public float ProgressSpeed { get { return _progressSpeed; } set { _progressSpeed = value; } }
-    public Building TargetBuilding { get { return _targetBuilding; } }
+    public Building TargetBuilding { get { return _targetBuilding; } set { _targetBuilding = value; } }
     public Vector3 TargetDestination { get { return _targetDestination; } }
 
     public float MinIdlingTime { get { return _minIdlingTime; } }
@@ -204,8 +204,9 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
     public void StopCurrentTask(){
         currentTask = null;
         currentTaskStep = TaskStep.None;
+        doNextTaskStep = false;
 
-        if(executingTaskCoroutine != null)
+        if (executingTaskCoroutine != null)
         {
             StopCoroutine(executingTaskCoroutine);
         }
