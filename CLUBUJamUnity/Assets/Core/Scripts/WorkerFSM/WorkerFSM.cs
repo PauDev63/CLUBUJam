@@ -26,7 +26,7 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
 
     public float Progress { get { return _progress; } set { _progress = value; } }
     public float ProgressSpeed { get { return _progressSpeed; } set { _progressSpeed = value; } }
-    public Building TargetBuilding { get { return _targetBuilding; } }
+    public Building TargetBuilding { get { return _targetBuilding; } set { _targetBuilding = value; } }
     public Vector3 TargetDestination { get { return _targetDestination; } }
 
     public float MinIdlingTime { get { return _minIdlingTime; } }
@@ -50,6 +50,8 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
 
     public TaskStep CurrentTaskStep { get { return currentTaskStep; } }
     public Resource CurrentResource { get { return currentResource; } set { currentResource = value; } }
+
+    private Coroutine executingTaskCoroutine;
 
 
 
@@ -108,38 +110,44 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
             UnqueueTask();
         }
 
-        StartCoroutine(ExecuteTaskStepByStep());
+        executingTaskCoroutine = StartCoroutine(ExecuteTaskStepByStep());
     }
 
     IEnumerator ExecuteTaskStepByStep()
     {
         hasWorkedDuringThisTask = false;
-        Debug.Log($"Task: {currentTask}. Target Building: {currentTask.targetBuilding}");
         _targetBuilding = currentTask.targetBuilding;
 
         //get task step (task as an array of TaskStep)
         if(_targetBuilding.QuantityNeeded > 0)
         {
-            if(_targetBuilding.QuantityGenerated != 0)
+            if(_targetBuilding.QuantityGenerated == 0)
             {
                 for (int i = 0; i < currentTask.resourcesNeededSteps.Length; i++)
                 {
                     currentTaskStep = currentTask.resourcesNeededSteps[i];
                     DoTaskStep();
+                    Debug.Log($"Preworking Current task step: {currentTaskStep}");
                     yield return new WaitUntil(() => doNextTaskStep); // WaitUntilTheTaskStepIsDone
                     doNextTaskStep = false;
+
+                    if (_targetBuilding.QuantityDropped != _targetBuilding.QuantityNeeded && i == currentTask.resourcesNeededSteps.Length-1)
+                    {
+                        i = -1;
+                    }
                 }
             }
         }
 
-        if (_targetBuilding.QuantityGenerated != 0)
+        if (_targetBuilding.QuantityGenerated == 0)
         {
             for (int i = 0; i < currentTask.workingSteps.Length; i++)
             {
-            currentTaskStep = currentTask.workingSteps[i];
-            DoTaskStep();
-            yield return new WaitUntil(() => doNextTaskStep); // WaitUntilTheTaskStepIsDone
-            doNextTaskStep = false;
+                currentTaskStep = currentTask.workingSteps[i];
+                DoTaskStep();
+                Debug.Log($"Working Current task step: {currentTaskStep}");
+                yield return new WaitUntil(() => doNextTaskStep); // WaitUntilTheTaskStepIsDone
+                doNextTaskStep = false;
             }
         }
 
@@ -150,8 +158,14 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
         {
             currentTaskStep = currentTask.resourcesGeneratedSteps[i];
             DoTaskStep();
+            Debug.Log($"After Working Current task step: {currentTaskStep}");
             yield return new WaitUntil(() => doNextTaskStep); // WaitUntilTheTaskStepIsDone
             doNextTaskStep = false;
+
+            if (_targetBuilding.QuantityGenerated > 0 && i == currentTask.resourcesGeneratedSteps.Length-1)
+            {
+                i = -1;
+            }
         }
 
         StopCurrentTask();
@@ -190,6 +204,12 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
     public void StopCurrentTask(){
         currentTask = null;
         currentTaskStep = TaskStep.None;
+        doNextTaskStep = false;
+
+        if (executingTaskCoroutine != null)
+        {
+            StopCoroutine(executingTaskCoroutine);
+        }
         
         if(currentResource != Resource.None){
             // leaves resource it at the town hall

@@ -12,7 +12,7 @@ public class Idle : WorkerStateTemplate
 
     public override void Enter()
     {
-        Debug.Log("Idle: enter");
+        //Debug.Log("Idle: enter");
         _stopTime = Random.Range(_workerFSM.MinIdlingTime, _workerFSM.MaxIdlingTime);
     }
 
@@ -48,7 +48,7 @@ public class Idle : WorkerStateTemplate
 
     public override void Exit()
     {
-        Debug.Log("Idle: exit");
+        //Debug.Log("Idle: exit");
         _counter = 0;
     }
 }

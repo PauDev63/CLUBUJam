@@ -4,16 +4,31 @@ using UnityEngine;
 public class Building : MonoBehaviour, IInteractable
 {
     [Tooltip("Add each level on the array to cycle on upgrade")]
-    [SerializeField] private Generation[] _generation;
+    [SerializeField] protected Generation[] _generation;
     [SerializeField] private int _upgradeLevel;
-    [SerializeField] private Task _task;
-    [SerializeField] private WorkerFSM _workerFSM;
-    [SerializeField] private int[] quantitiesDropped;
-    [SerializeField] private int quantityGenerated;
-    [SerializeField] private int quantityNeeded;
+    [SerializeField] protected Task _task;
+    [SerializeField] protected WorkerFSM _workerFSM;
+    protected int[] quantitiesDropped;
+     [SerializeField] private int quantityGenerated;
+    protected int quantityNeeded;    // total quantity required for generation
+
 
     public int QuantityGenerated { get { return quantityGenerated; } }
     public int QuantityNeeded { get { return quantityNeeded; } }
+    public int QuantityDropped
+    {
+        get
+        {
+            int i = 0;
+
+            foreach (int quantity in quantitiesDropped)
+            {
+                i += quantity;
+            }
+
+            return i;
+        }
+    }
 
 
 
@@ -37,14 +52,14 @@ public class Building : MonoBehaviour, IInteractable
         if (CameraController.Instance.ActiveWorker != null)
         {
             CameraController.Instance.ActiveWorker.QueueTask(_task);
-            Debug.Log("Task assigned");
+            //Debug.Log("Task assigned");
         }
         Debug.Log("Building interacted");
         CameraController.Instance.ActiveWorker = null;
         
     }
 
-    public void GenerateResource()
+    private void GenerateResource()
     {
         for (int i = 0; i < _generation[_upgradeLevel - 1].resourcesRequiredForGeneration.Length; i++)
         {
@@ -52,6 +67,10 @@ public class Building : MonoBehaviour, IInteractable
         }
         quantityGenerated += _generation[_upgradeLevel - 1].quantityGenerated;
         //ResourcesManager.Instance.AddResource(_generation[_upgradeLevel - 1].resourceGenerated, _generation[_upgradeLevel - 1].quantityGenerated);
+    }
+
+    public virtual void DoEffectAfterWork(){
+        GenerateResource();
     }
 
     public void TryUpgrade()

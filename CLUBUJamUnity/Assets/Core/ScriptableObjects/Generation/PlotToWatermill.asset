@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80682fc7ead221144a715e1865644b3f, type: 3}
-  m_Name: WheatField_Level_1
+  m_Name: PlotToWatermill
   m_EditorClassIdentifier: 
-  resourcesRequiredForGeneration: 
-  quantitiesRequiredForGeneration: 
-  resourcesRequiredForUpgrading: 01000000
-  quantitiesRequiredForUpgrading: 05000000
-  resourceGenerated: 1
-  quantityGenerated: 5
+  resourcesRequiredForGeneration: 01000000
+  quantitiesRequiredForGeneration: 05000000
+  resourcesRequiredForUpgrading: 
+  quantitiesRequiredForUpgrading: 
+  resourceGenerated: 0
+  quantityGenerated: 0
