@@ -251,7 +251,18 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
     {
         //_workerFSM.QueueTask(_task);
         Debug.Log("Worker selected");
-        CameraController.Instance.ActiveWorker = this;
+        //CameraController.Instance.ActiveWorker = this;
+
+        if (UIManager.Instance.IsOpen)
+        {
+            // mostrar worker en UI y ahí hacer el select
+            UIManager.Instance.InteractableSelected(this);
+        }
+        else
+        {
+            CameraController.Instance.ActiveWorker = this;    
+        }
+        
     }
 
 }

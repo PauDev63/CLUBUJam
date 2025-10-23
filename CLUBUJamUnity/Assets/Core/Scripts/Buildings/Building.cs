@@ -30,6 +30,8 @@ public class Building : MonoBehaviour, IInteractable
         }
     }
 
+    public Task BuildingTask { get { return _task; } }
+
 
 
     private void Start()
@@ -49,13 +51,23 @@ public class Building : MonoBehaviour, IInteractable
     public void Interact()
     {
 
-        if (CameraController.Instance.ActiveWorker != null)
+        if (UIManager.Instance.IsOpen)
         {
-            CameraController.Instance.ActiveWorker.QueueTask(_task);
-            //Debug.Log("Task assigned");
+            // mostrar building en UI (y asignar ahí tarea o que se asigne directamente?)
+            UIManager.Instance.InteractableSelected(this);
+                //sirve para Plot también
         }
-        Debug.Log("Building interacted");
-        CameraController.Instance.ActiveWorker = null;
+        else
+        {
+            if (CameraController.Instance.ActiveWorker != null)
+            {
+                CameraController.Instance.ActiveWorker.QueueTask(_task);
+                //Debug.Log("Task assigned");
+            }
+
+            Debug.Log("Building interacted");
+            CameraController.Instance.ActiveWorker = null;
+        }
         
     }
 
