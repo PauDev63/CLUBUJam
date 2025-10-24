@@ -13,6 +13,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject BuildingUI;
     [SerializeField] private GameObject PlotUI;
     [SerializeField] private GameObject ShowUIButton;
+    //[SerializeField] private Button _assignTaskWorkerButton;
+    [SerializeField] private Button _upgradeBuildingButton;
+    [SerializeField] private Button _buildPlotButton;
 
     private bool _isOpen;
     public bool IsOpen { get { return _isOpen; } }
@@ -30,7 +33,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         // Mostrar botón para mostrar menú, pero no menú aún
-        _isOpen = false;
+        _isOpen = true;
     }
 
     public void ToggleUI()
@@ -50,6 +53,21 @@ public class UIManager : MonoBehaviour
         // Hide UI
         GameplayMenuUI.SetActive(false);
         _isOpen = false;
+
+        switch (objectSelected)
+        {
+            case WorkerFSM worker:
+                HideObjectUI(WorkerUI);
+                break;
+            case Plot plot:
+                HideObjectUI(PlotUI);
+                break;
+            case Building building:
+                HideObjectUI(BuildingUI);
+                break;
+        }
+
+        objectSelected = null;
 
         // Show button
         ShowUIButton.SetActive(true);
@@ -87,15 +105,14 @@ public class UIManager : MonoBehaviour
         {
             case WorkerFSM worker:
                 ShowObjectUI(WorkerUI);
-                // solo activeworker si se le da a assign task
                 break;
             case Plot plot:
+                _buildPlotButton.interactable = (CameraController.Instance.ActiveWorker != null);
                 ShowObjectUI(PlotUI);
-                BuildingUI.transform.Find("BuildPlotButton").GetComponent<Button>().interactable = (CameraController.Instance.ActiveWorker != null);
                 break;
             case Building building:
+                _upgradeBuildingButton.interactable = building.CanUpgrade() && building.HasUpgradingResources();
                 ShowObjectUI(BuildingUI);
-                BuildingUI.transform.Find("AssignTaskButton").GetComponent<Button>().interactable = (CameraController.Instance.ActiveWorker != null);
                 break;
         }
 
@@ -124,6 +141,7 @@ public class UIManager : MonoBehaviour
     {
         // método StopCurrentTask() del WorkerFSM
             // QUÉ PASA SI SE CANCELA TENIENDO UN OBJETO Y ANTES DE DEJARLO EN EL AYTO SE LE ASIGNA OTRA TAREA????
+        // Solo se cancela la tarea concreta
 
         if (objectSelected is WorkerFSM worker)
         {
@@ -131,14 +149,24 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void AssignTask()
+    public void AssignTaskWorker()
+    {
+        if (objectSelected is WorkerFSM worker)
+        {
+            CameraController.Instance.ActiveWorker = worker;
+
+            //hacer que la UI del worker sea fija
+        }
+    }
+
+    public void AssignTaskBuilding()
     {
         // comprobar si hay worker seleccionado
         //CameraController.Instance.ActiveWorker.QueueTask(_task);      //cómo lo hacemos con la task? hacer método en Building?
         if (objectSelected is Building building)
         {
             CameraController.Instance.ActiveWorker.QueueTask(building.BuildingTask);
-            BuildingUI.transform.Find("AssignTaskButton").GetComponent<Button>().interactable = false;
+            //BuildingUI.transform.Find("AssignTaskButton").GetComponent<Button>().interactable = false;
             CameraController.Instance.ActiveWorker = null;
         }
     }
@@ -146,7 +174,20 @@ public class UIManager : MonoBehaviour
     public void UpgradeBuilding()
     {
         // comprobar si hay worker seleccionado
-        // lo que toque de eso
+        // quitar interactable del boton si no hay worker
+
+        if (objectSelected is Building building)
+        {
+            //CameraController.Instance.ActiveWorker.QueueTask(building.BuildingTask);
+            //building.TryUpgrade();
+            Debug.Log("Upgrade building");
+            CameraController.Instance.ActiveWorker = null;
+
+            // setea una flag y la siguiente assign task del propio edificio asignará la tarea de Upgrade
+            building.ToggleUpgradeMode();
+            _upgradeBuildingButton.interactable = false;
+        }
+
     }
     
     public void BuildPlot()
@@ -160,7 +201,7 @@ public class UIManager : MonoBehaviour
 
             // NO es ConstructBuilding() porque eso es para cuando ha terminado, será asignar su tarea al worker
             CameraController.Instance.ActiveWorker.QueueTask(plot.BuildingTask);
-            BuildingUI.transform.Find("BuildPlotButton").GetComponent<Button>().interactable = false;
+            _buildPlotButton.interactable = false;
             CameraController.Instance.ActiveWorker = null;
         }
     }

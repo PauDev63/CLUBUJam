@@ -14,6 +14,8 @@ public class CameraController : MonoBehaviour //FSMTemplateMachine
 
     private WorkerFSM activeWorker;
     public WorkerFSM ActiveWorker { get { return activeWorker; } set { activeWorker = value; } }
+    private Building activeBuilding;
+    public WorkerFSM ActiveBuilding { get { return activeBuilding; } set { activeBuilding = value; } }
 
 
     void Awake()

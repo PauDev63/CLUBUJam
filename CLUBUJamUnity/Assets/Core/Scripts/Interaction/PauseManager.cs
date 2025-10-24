@@ -9,6 +9,7 @@ public class PauseManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private GameObject pauseMenuUI;
     private bool isPaused = false;
+    private bool _isMute = false;
 
     void Start()
     {
@@ -30,7 +31,7 @@ public class PauseManager : MonoBehaviour
 
     public void PausePerformed()
     {
-        if (isPaused) 
+        if (isPaused)
             Resume();
         else
             Pause();
@@ -65,4 +66,18 @@ public class PauseManager : MonoBehaviour
     {
         Resume();
     }
+
+    public void ToggleMute()
+    {
+        if (_isMute)
+        {
+            // turn on sound
+        }
+        else
+        {
+            // turn off sound
+        }
+            
+    }
+
 }

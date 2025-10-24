@@ -9,8 +9,11 @@ public class Building : MonoBehaviour, IInteractable
     [SerializeField] protected Task _task;
     [SerializeField] protected WorkerFSM _workerFSM;
     protected int[] quantitiesDropped;
-     [SerializeField] private int quantityGenerated;
+    [SerializeField] private int quantityGenerated;
     protected int quantityNeeded;    // total quantity required for generation
+
+    private bool upgradeMode;
+    [SerializeField] private GameObject _upgradingFlag;
 
 
     public int QuantityGenerated { get { return quantityGenerated; } }
@@ -31,12 +34,14 @@ public class Building : MonoBehaviour, IInteractable
     }
 
     public Task BuildingTask { get { return _task; } }
+    public bool UpgradeMode { get { return upgradeMode; } set { upgradeMode = value; } }
 
 
 
     private void Start()
     {
         _task = new Task(this);
+        upgradeMode = false;
 
         quantitiesDropped = new int[_generation[_upgradeLevel - 1].quantitiesRequiredForGeneration.Length];
         CalculateQuantitiesNeeded();
@@ -51,24 +56,29 @@ public class Building : MonoBehaviour, IInteractable
     public void Interact()
     {
 
-        if (UIManager.Instance.IsOpen)
+        /*if (UIManager.Instance.IsOpen)
         {
             // mostrar building en UI (y asignar ahí tarea o que se asigne directamente?)
             UIManager.Instance.InteractableSelected(this);
-                //sirve para Plot también
+            //sirve para Plot también
         }
         else
         {
-            if (CameraController.Instance.ActiveWorker != null)
-            {
-                CameraController.Instance.ActiveWorker.QueueTask(_task);
-                //Debug.Log("Task assigned");
-            }
 
-            Debug.Log("Building interacted");
-            CameraController.Instance.ActiveWorker = null;
+        }*/
+        if (UIManager.Instance.IsOpen)
+        {
+            UIManager.Instance.InteractableSelected(this);
         }
         
+        if (CameraController.Instance.ActiveWorker != null)
+        {
+            CameraController.Instance.ActiveWorker.QueueTask(_task);
+            //Debug.Log("Task assigned");
+        }
+
+        Debug.Log("Building interacted");
+        CameraController.Instance.ActiveWorker = null;
     }
 
     private void GenerateResource()
@@ -93,7 +103,7 @@ public class Building : MonoBehaviour, IInteractable
         }
     }
 
-    private bool CanUpgrade()
+    public bool CanUpgrade()
     {
         if(_upgradeLevel < _generation.Length)
             return HasUpgradingResources();
@@ -101,7 +111,7 @@ public class Building : MonoBehaviour, IInteractable
         return false;
     }
 
-    private bool HasUpgradingResources()
+    public bool HasUpgradingResources()
     {
         for(int i = 0; i < _generation[_upgradeLevel - 1].resourcesRequiredForUpgrading.Length; i++)
         {
@@ -124,6 +134,31 @@ public class Building : MonoBehaviour, IInteractable
         _upgradeLevel++;
         CalculateQuantitiesNeeded();
         //Debug.Log($"Building {gameObject.name} has been upgraded to level {_upgradeLevel}.");
+
+
+        // Just change flag, that will change the main loops
+        // quitar quantities dropped al poner el flag
+        // el quantity dropped debe ser 0 y el Quantity needed que sea el required for upgrade, no el for generation
+        // también cambiar el fetch con el flag y el drop
+        // y el DoAfterWork() del Working
+    }
+    
+    public void ToggleUpgradeMode()
+    {
+        /*if (upgradeMode)
+        {
+            upgradeMode = false;
+            _upgradingFlag.SetActive(false);
+        }
+        else
+        {
+            // se enciende
+            upgradeMode = true;
+            _upgradingFlag.SetActive(true);
+        }*/
+
+        upgradeMode = !upgradeMode;
+        _upgradingFlag.SetActive(upgradeMode);
     }
 
     public Resource GetRequiredResource()

@@ -260,7 +260,7 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
         }
         else
         {
-            CameraController.Instance.ActiveWorker = this;    
+            CameraController.Instance.ActiveWorker = this;
         }
         
     }
