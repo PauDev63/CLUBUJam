@@ -1,0 +1,1260 @@
+fileFormatVersion: 2
+guid: 6d394c23c2beb8146accf0618bd432ac
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 120
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WorkFISH_0
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1950
+        width: 289
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd532cb0391b734fbfd98ce4a6b714a
+      internalID: -1179946551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_1
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 1950
+        width: 287
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4deb9d5b09166434c8bf8cec1e2c5c97
+      internalID: -230023479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_2
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 1950
+        width: 289
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f768b98d7b467d6459091f35a792831a
+      internalID: 24497815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_3
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 1950
+        width: 288
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e1fe501ecf3c6749b57ccd8d52c1392
+      internalID: 279111411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_4
+      rect:
+        serializedVersion: 2
+        x: 2397
+        y: 1950
+        width: 289
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ce6f0e072b61547a6dfa594eb45b52
+      internalID: 835829326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_5
+      rect:
+        serializedVersion: 2
+        x: 2970
+        y: 1950
+        width: 287
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68d766f70ea71024b91ee61d687b0adc
+      internalID: 1463204463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_6
+      rect:
+        serializedVersion: 2
+        x: 3542
+        y: 1950
+        width: 287
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5101fcaca90640458bb6fbc14e58e42
+      internalID: -525761985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1628
+        width: 289
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba856174fb97244dad712a7c65246ca
+      internalID: 1910037078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_8
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 1628
+        width: 287
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2bc9499488fb26448e5f8aa02c93f35
+      internalID: -1550670679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_9
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 1626
+        width: 287
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8824504c47dc04e4c9e796cd4bc17fea
+      internalID: 1134809348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_10
+      rect:
+        serializedVersion: 2
+        x: 1829
+        y: 1626
+        width: 283
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39daf674bf5f0d94189799b5825c98be
+      internalID: 546277329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_11
+      rect:
+        serializedVersion: 2
+        x: 2397
+        y: 1626
+        width: 289
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a8810c208ab0b4cbfae2a773999515
+      internalID: 861167246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_12
+      rect:
+        serializedVersion: 2
+        x: 2972
+        y: 1626
+        width: 283
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45343ea2522ce57479944b00177a89ca
+      internalID: 645675203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_13
+      rect:
+        serializedVersion: 2
+        x: 3546
+        y: 1626
+        width: 277
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 280e19db0ee656a4ea237d58a8a5b481
+      internalID: -1407219354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_14
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1306
+        width: 264
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e9114a836268684bad506f701e2b92b
+      internalID: 1420597132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_15
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1306
+        width: 248
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ec1f4e6f90fad4d897bfa8de945dc2
+      internalID: -950579189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_16
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 1306
+        width: 234
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4c30667fe02cbd459a6dcf3c27c0597
+      internalID: -756506442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_17
+      rect:
+        serializedVersion: 2
+        x: 1862
+        y: 1306
+        width: 219
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9468eb28f7c23ce439799e31baa07b9f
+      internalID: -1668683466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_18
+      rect:
+        serializedVersion: 2
+        x: 2442
+        y: 1302
+        width: 201
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704e5c57c92d8e543b441dcbad62c94f
+      internalID: 943168594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_19
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 1300
+        width: 180
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c25295a7b02ce547a5b1cd67b70b0c3
+      internalID: -790278153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_20
+      rect:
+        serializedVersion: 2
+        x: 3610
+        y: 1298
+        width: 151
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9201c378d857cd846b76a2a382d38ecc
+      internalID: -761564898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_21
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 978
+        width: 130
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a931af39bede594ab63a35287b7f68d
+      internalID: 1003372645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_22
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 980
+        width: 133
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2df33cfc19679934e846bad3c73a7979
+      internalID: -1190148671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_23
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 983
+        width: 133
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ad4bf0cfc170a45bcd22db1d2b299e
+      internalID: 237375104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_24
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 983
+        width: 131
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a3982c07cc846c4d8074e33cd4d94c6
+      internalID: -760164005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_25
+      rect:
+        serializedVersion: 2
+        x: 2472
+        y: 983
+        width: 132
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 122e7656ffe44e147b84ee760fea2626
+      internalID: 254332425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_26
+      rect:
+        serializedVersion: 2
+        x: 3044
+        y: 983
+        width: 131
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd2ca8d78b20b7429a15f9489fd2346
+      internalID: -971922649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_27
+      rect:
+        serializedVersion: 2
+        x: 3614
+        y: 983
+        width: 133
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f05f5a41b0f07ab4c8851ceb702efdb4
+      internalID: 280478675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_28
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 661
+        width: 130
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60e3a5b574bd8af4ea63c8eb875d8527
+      internalID: -457802393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_29
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 661
+        width: 133
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38759a21d8d0e444ba9f117622695a2d
+      internalID: -1391323433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_30
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 662
+        width: 133
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87785711412cc084e9520d01ee3b130b
+      internalID: -1296447244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_31
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 661
+        width: 131
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d60bc5b4a47cf1d4ca5dbe71563ee8c8
+      internalID: -764219606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_32
+      rect:
+        serializedVersion: 2
+        x: 2472
+        y: 662
+        width: 132
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5ecc55d19bedf42abac9d87c819322
+      internalID: 1382413018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_33
+      rect:
+        serializedVersion: 2
+        x: 3017
+        y: 661
+        width: 195
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4cd2962bf2ba64b98f7b8dacc74d79
+      internalID: 899361883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_35
+      rect:
+        serializedVersion: 2
+        x: 3556
+        y: 663
+        width: 258
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d8284f82fd38143a85db8eddde4cb1
+      internalID: -755551173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_37
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 341
+        width: 284
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de6cfc5deb4a90e418fdd451b5266ecc
+      internalID: 1382127641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_39
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 341
+        width: 240
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a716d6e5876045b4482a62fa02b71c64
+      internalID: -1886882898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_40
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 343
+        width: 248
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b72cd133b5ff811478b188d50c8a08ec
+      internalID: -519221065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_41
+      rect:
+        serializedVersion: 2
+        x: 1841
+        y: 343
+        width: 260
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2c79cacb535d294da5e6fc3a634df72
+      internalID: 264656607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_42
+      rect:
+        serializedVersion: 2
+        x: 2409
+        y: 340
+        width: 266
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750598ed1ab52a6408e6e2143dbf24e7
+      internalID: -1313641335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_44
+      rect:
+        serializedVersion: 2
+        x: 2981
+        y: 343
+        width: 266
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094ef52d7c72ed34cb431ea30865193c
+      internalID: 649161387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_45
+      rect:
+        serializedVersion: 2
+        x: 3558
+        y: 342
+        width: 254
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2008fdde43145843a5f9c16f70ed132
+      internalID: 2000604588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_53
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 21
+        width: 230
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 364686aa81f2db5419ff48fb59470a5a
+      internalID: -686796145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_54
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 21
+        width: 266
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9119c55eb762a8445b8b061c8b976a07
+      internalID: -76240433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_55
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 21
+        width: 297
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4a90c17eee7934393e313368c4810b
+      internalID: 1228216092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_57
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 21
+        width: 318
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fb72ef15d1eaa744864fddc3f18490d
+      internalID: 1284099858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_59
+      rect:
+        serializedVersion: 2
+        x: 2378
+        y: 21
+        width: 328
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70848c6e482df0145afe2ef6950c6d8a
+      internalID: -494884569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_61
+      rect:
+        serializedVersion: 2
+        x: 2950
+        y: 21
+        width: 326
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e711fd280795e44b2d629ba1165ee8
+      internalID: -400609717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WorkFISH_63
+      rect:
+        serializedVersion: 2
+        x: 3532
+        y: 21
+        width: 307
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd0b14a79cce6c4c914771c6527ce47
+      internalID: -1324384914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1f64a39ed3f2a6145969084b7e6b1610
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      WorkFISH_0: -1179946551
+      WorkFISH_1: -230023479
+      WorkFISH_10: 546277329
+      WorkFISH_11: 861167246
+      WorkFISH_12: 645675203
+      WorkFISH_13: -1407219354
+      WorkFISH_14: 1420597132
+      WorkFISH_15: -950579189
+      WorkFISH_16: -756506442
+      WorkFISH_17: -1668683466
+      WorkFISH_18: 943168594
+      WorkFISH_19: -790278153
+      WorkFISH_2: 24497815
+      WorkFISH_20: -761564898
+      WorkFISH_21: 1003372645
+      WorkFISH_22: -1190148671
+      WorkFISH_23: 237375104
+      WorkFISH_24: -760164005
+      WorkFISH_25: 254332425
+      WorkFISH_26: -971922649
+      WorkFISH_27: 280478675
+      WorkFISH_28: -457802393
+      WorkFISH_29: -1391323433
+      WorkFISH_3: 279111411
+      WorkFISH_30: -1296447244
+      WorkFISH_31: -764219606
+      WorkFISH_32: 1382413018
+      WorkFISH_33: 899361883
+      WorkFISH_34: -79370252
+      WorkFISH_35: -755551173
+      WorkFISH_36: -1925291324
+      WorkFISH_37: 1382127641
+      WorkFISH_38: 408893652
+      WorkFISH_39: -1886882898
+      WorkFISH_4: 835829326
+      WorkFISH_40: -519221065
+      WorkFISH_41: 264656607
+      WorkFISH_42: -1313641335
+      WorkFISH_43: -1098737933
+      WorkFISH_44: 649161387
+      WorkFISH_45: 2000604588
+      WorkFISH_46: 195408950
+      WorkFISH_47: 288369581
+      WorkFISH_48: 1479930667
+      WorkFISH_49: 779543728
+      WorkFISH_5: 1463204463
+      WorkFISH_50: 1378651452
+      WorkFISH_51: -1688650
+      WorkFISH_52: 1592386629
+      WorkFISH_53: -686796145
+      WorkFISH_54: -76240433
+      WorkFISH_55: 1228216092
+      WorkFISH_56: -616117492
+      WorkFISH_57: 1284099858
+      WorkFISH_58: 377740640
+      WorkFISH_59: -494884569
+      WorkFISH_6: -525761985
+      WorkFISH_60: -273601649
+      WorkFISH_61: -400609717
+      WorkFISH_62: 623592591
+      WorkFISH_63: -1324384914
+      WorkFISH_64: -898079466
+      WorkFISH_7: 1910037078
+      WorkFISH_8: -1550670679
+      WorkFISH_9: 1134809348
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -11,11 +11,15 @@ public class Drop : WorkerStateTemplate
         // Drop item
         Debug.Log("Dropping item...");
         if (!_workerFSM.HasWorkedDuringThisTask)
+        {
             _workerFSM.TargetBuilding.DropRequiredResource(_workerFSM.CurrentResource);
-
+        }
         else
+        {
             ResourcesManager.Instance.AddResource(_workerFSM.CurrentResource, 1);
+        }
         
+        _workerFSM.ShowResource(false);
         _workerFSM.CurrentResource = Resource.None;
     }
 

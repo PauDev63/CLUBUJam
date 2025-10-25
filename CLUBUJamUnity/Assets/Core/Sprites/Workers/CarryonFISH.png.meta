@@ -1,0 +1,1069 @@
+fileFormatVersion: 2
+guid: 14638f42cfc6cb3418125e7056896cbf
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 120
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CarryonFISH_0
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 1652
+        width: 226
+        height: 263
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 651d78cc6ac21454297ecaa39dcc268f
+      internalID: 1344430171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_1
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 1650
+        width: 218
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22b10c8fc5ef404cbdc0bf765ce40c7
+      internalID: -1715254058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_2
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 1646
+        width: 209
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c33296304c8fcf46b6d8676be5a18c4
+      internalID: -331496435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_3
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 1644
+        width: 207
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656f63320ccdf1e428cbbca0ab4f1024
+      internalID: 1444365326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_4
+      rect:
+        serializedVersion: 2
+        x: 2419
+        y: 1642
+        width: 205
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db38725b47fe6564389b898d5267436d
+      internalID: 992410919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_5
+      rect:
+        serializedVersion: 2
+        x: 2997
+        y: 1640
+        width: 203
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc428a3109e9a944eb846956d2977853
+      internalID: 851812082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_7
+      rect:
+        serializedVersion: 2
+        x: 3577
+        y: 1639
+        width: 201
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd04140145fd83b4a91842197d862fac
+      internalID: 1137841824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_9
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 1318
+        width: 201
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2eb22b1f5f7bda45a712c96a0287539
+      internalID: -552870374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_11
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 1316
+        width: 200
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef59c2f231c858478bc7061d6da917a
+      internalID: -308412976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_13
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 1316
+        width: 203
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0742006755a7e364893f552177d150f3
+      internalID: 1200531090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_15
+      rect:
+        serializedVersion: 2
+        x: 1886
+        y: 1312
+        width: 205
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0c62937c2c2cac49874b73e3c960f9a
+      internalID: 1546573409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_17
+      rect:
+        serializedVersion: 2
+        x: 2462
+        y: 1314
+        width: 205
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 430411d4bfc7613479d8e43a97625851
+      internalID: -862228595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_19
+      rect:
+        serializedVersion: 2
+        x: 3038
+        y: 1316
+        width: 205
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2790dcb899f2f9343b14a4625fa15106
+      internalID: 174553025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_21
+      rect:
+        serializedVersion: 2
+        x: 3614
+        y: 1318
+        width: 207
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab02aa5d53731d843abe242f6fac5f96
+      internalID: -620212818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_27
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 999
+        width: 208
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61548fffb09aa1a47a653d3472029210
+      internalID: -1485498471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_29
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 1003
+        width: 215
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b804ceafce7ec594eb34fa4dd7c4d1aa
+      internalID: 782505496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_31
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 1005
+        width: 223
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d283ad6de67789845b51c71064f41ce4
+      internalID: -1124795728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_33
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 1007
+        width: 230
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55af6f90e4e12643a370a7153edc292
+      internalID: 804966368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_35
+      rect:
+        serializedVersion: 2
+        x: 2472
+        y: 1009
+        width: 236
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80c399493d30700469eabae71db99fdf
+      internalID: -688856316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_37
+      rect:
+        serializedVersion: 2
+        x: 3042
+        y: 1011
+        width: 242
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dd20f2caad5e8c4ea09e45cd4863e66
+      internalID: 745088912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_39
+      rect:
+        serializedVersion: 2
+        x: 3612
+        y: 1013
+        width: 248
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89847fc040139324d8d09dbf3cbf302d
+      internalID: -616764850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_40
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 689
+        width: 242
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cdf5bd3f5a37e04b9bd38dd308c2cfc
+      internalID: -2008054342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_42
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 687
+        width: 236
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6588406ec105cc2428b25df45f01f692
+      internalID: 1603076621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_44
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 686
+        width: 231
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c47fc3edf36c17428b0ad4b75cf7509
+      internalID: -1173856120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_46
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 683
+        width: 224
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 513f5bfda5aa3184a96bc686c3e92523
+      internalID: 411540205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_48
+      rect:
+        serializedVersion: 2
+        x: 2472
+        y: 681
+        width: 218
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e18168e253483b44a2463f803d45b85
+      internalID: 941852280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_50
+      rect:
+        serializedVersion: 2
+        x: 3046
+        y: 679
+        width: 211
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 714f7ed938576f64699eb5234f0e422c
+      internalID: -344161550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_52
+      rect:
+        serializedVersion: 2
+        x: 3614
+        y: 677
+        width: 207
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d8e690310e70d0488f4e29129a426f5
+      internalID: 1674100583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_54
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 355
+        width: 207
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97999519af253ac4e9426533cbf917c6
+      internalID: -452846251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_56
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 353
+        width: 207
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f484b80ab22e50344abe1eb59f877fda
+      internalID: -1743429691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_58
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 351
+        width: 205
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f1eddcbe40a07c428580451c5784403
+      internalID: -1398278712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_60
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 351
+        width: 203
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e5a96df306d7cd46b048db59a2d0020
+      internalID: -2111104940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_62
+      rect:
+        serializedVersion: 2
+        x: 2446
+        y: 352
+        width: 199
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91b48e57937d4a04d8c57c8a9a415d4d
+      internalID: 748438628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_64
+      rect:
+        serializedVersion: 2
+        x: 3013
+        y: 353
+        width: 198
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17a90e845009d8b409350d1c792e6bb4
+      internalID: -2070336193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_66
+      rect:
+        serializedVersion: 2
+        x: 3577
+        y: 353
+        width: 199
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bd2fe7bfc981794d96cfa472bd53e80
+      internalID: -1696081791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_67
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 34
+        width: 203
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c3340a0a58cb034baaaa6ce347c6c29
+      internalID: -1553712147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_68
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 36
+        width: 204
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4580d84f8a16164faa5b081103c8f35
+      internalID: -295029108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_69
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 38
+        width: 206
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f3d14313dbd72047a98b48c7c443aff
+      internalID: -152527468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_70
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 40
+        width: 209
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6bc87de25448f34b8e5366b6665f140
+      internalID: 1444931340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarryonFISH_71
+      rect:
+        serializedVersion: 2
+        x: 2396
+        y: 44
+        width: 216
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 408ecfacea2cb2d48902aca5490d49cb
+      internalID: 1736557654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6cb6636ab7e679541bfee14064fa884b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CarryonFISH_0: 1344430171
+      CarryonFISH_1: -1715254058
+      CarryonFISH_10: -1307618660
+      CarryonFISH_11: -308412976
+      CarryonFISH_12: 1158938511
+      CarryonFISH_13: 1200531090
+      CarryonFISH_14: -1278513804
+      CarryonFISH_15: 1546573409
+      CarryonFISH_16: 211043385
+      CarryonFISH_17: -862228595
+      CarryonFISH_18: 2084864597
+      CarryonFISH_19: 174553025
+      CarryonFISH_2: -331496435
+      CarryonFISH_20: -1321526346
+      CarryonFISH_21: -620212818
+      CarryonFISH_22: 2045397613
+      CarryonFISH_23: 1649031862
+      CarryonFISH_24: -611761922
+      CarryonFISH_25: -924541678
+      CarryonFISH_26: -419030152
+      CarryonFISH_27: -1485498471
+      CarryonFISH_28: -52576745
+      CarryonFISH_29: 782505496
+      CarryonFISH_3: 1444365326
+      CarryonFISH_30: 2103218073
+      CarryonFISH_31: -1124795728
+      CarryonFISH_32: 1292127581
+      CarryonFISH_33: 804966368
+      CarryonFISH_34: -481309059
+      CarryonFISH_35: -688856316
+      CarryonFISH_36: -349781699
+      CarryonFISH_37: 745088912
+      CarryonFISH_38: -385680852
+      CarryonFISH_39: -616764850
+      CarryonFISH_4: 992410919
+      CarryonFISH_40: -2008054342
+      CarryonFISH_41: 1626503905
+      CarryonFISH_42: 1603076621
+      CarryonFISH_43: -1160973427
+      CarryonFISH_44: -1173856120
+      CarryonFISH_45: -1440393240
+      CarryonFISH_46: 411540205
+      CarryonFISH_47: -1940038974
+      CarryonFISH_48: 941852280
+      CarryonFISH_49: 1201470079
+      CarryonFISH_5: 851812082
+      CarryonFISH_50: -344161550
+      CarryonFISH_51: 41175677
+      CarryonFISH_52: 1674100583
+      CarryonFISH_53: 664045545
+      CarryonFISH_54: -452846251
+      CarryonFISH_55: -1526502535
+      CarryonFISH_56: -1743429691
+      CarryonFISH_57: 1417296667
+      CarryonFISH_58: -1398278712
+      CarryonFISH_59: -703621044
+      CarryonFISH_6: -1702959026
+      CarryonFISH_60: -2111104940
+      CarryonFISH_61: 11855421
+      CarryonFISH_62: 748438628
+      CarryonFISH_63: -1284075919
+      CarryonFISH_64: -2070336193
+      CarryonFISH_65: 987743121
+      CarryonFISH_66: -1696081791
+      CarryonFISH_67: -1553712147
+      CarryonFISH_68: -295029108
+      CarryonFISH_69: -152527468
+      CarryonFISH_7: 1137841824
+      CarryonFISH_70: 1444931340
+      CarryonFISH_71: 1736557654
+      CarryonFISH_8: 725255011
+      CarryonFISH_9: -552870374
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

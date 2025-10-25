@@ -14,6 +14,7 @@ public class Working : WorkerStateTemplate
         Debug.Log("Working: enter");
         hasEndedWorking = false;
         EventHolder.Instance.onTick.AddListener(Work);
+        _workerFSM.AnimatorWorker.Play("FishWork");
     }
 
     public override void UpdateLogic()

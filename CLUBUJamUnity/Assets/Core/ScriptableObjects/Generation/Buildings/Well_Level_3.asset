@@ -16,5 +16,5 @@ MonoBehaviour:
   quantitiesRequiredForGeneration: 
   resourcesRequiredForUpgrading: 
   quantitiesRequiredForUpgrading: 
-  resourceGenerated: 5
+  resourceGenerated: 1
   quantityGenerated: 6
