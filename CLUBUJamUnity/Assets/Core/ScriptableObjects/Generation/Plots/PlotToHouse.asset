@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80682fc7ead221144a715e1865644b3f, type: 3}
-  m_Name: Watermill_Level_1
+  m_Name: PlotToHouse
   m_EditorClassIdentifier: 
-  resourcesRequiredForGeneration: 01000000
-  quantitiesRequiredForGeneration: 01000000
-  resourcesRequiredForUpgrading: 01000000
-  quantitiesRequiredForUpgrading: 05000000
-  resourceGenerated: 4
-  quantityGenerated: 1
+  resourcesRequiredForGeneration: 
+  quantitiesRequiredForGeneration: 
+  resourcesRequiredForUpgrading: 040000000200000005000000
+  quantitiesRequiredForUpgrading: 020000000200000002000000
+  resourceGenerated: 0
+  quantityGenerated: 0

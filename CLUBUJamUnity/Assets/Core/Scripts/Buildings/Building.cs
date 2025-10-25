@@ -10,14 +10,17 @@ public class Building : MonoBehaviour, IInteractable
     [SerializeField] protected WorkerFSM _workerFSM;
     protected int[] quantitiesDropped;
     [SerializeField] private int quantityGenerated;
+    protected int[] quantitiesDroppedForUpgrading;
     protected int quantityNeeded;    // total quantity required for generation
+    protected int quantityNeededForUpgrading;
 
-    private bool upgradeMode;
-    [SerializeField] private GameObject _upgradingFlag;
+    protected bool upgradeMode;
+    [SerializeField] protected GameObject _upgradingFlag;
 
 
     public int QuantityGenerated { get { return quantityGenerated; } }
     public int QuantityNeeded { get { return quantityNeeded; } }
+    public int QuantityNeededForUpgrading { get { return quantityNeededForUpgrading; } }
     public int QuantityDropped
     {
         get
@@ -25,6 +28,20 @@ public class Building : MonoBehaviour, IInteractable
             int i = 0;
 
             foreach (int quantity in quantitiesDropped)
+            {
+                i += quantity;
+            }
+
+            return i;
+        }
+    }
+    public int QuantityDroppedForUpgrading
+    {
+        get
+        {
+            int i = 0;
+
+            foreach (int quantity in quantitiesDroppedForUpgrading)
             {
                 i += quantity;
             }
@@ -44,7 +61,9 @@ public class Building : MonoBehaviour, IInteractable
         upgradeMode = false;
 
         quantitiesDropped = new int[_generation[_upgradeLevel - 1].quantitiesRequiredForGeneration.Length];
+        quantitiesDroppedForUpgrading = new int[_generation[_upgradeLevel - 1].quantitiesRequiredForUpgrading.Length];
         CalculateQuantitiesNeeded();
+        CalculateQuantitiesNeededForUpgrading();
     }
 
     private void CalculateQuantitiesNeeded()
@@ -53,7 +72,13 @@ public class Building : MonoBehaviour, IInteractable
             quantityNeeded += quantity;
     }
 
-    public void Interact()
+    private void CalculateQuantitiesNeededForUpgrading()
+    {
+        foreach (int quantity in _generation[_upgradeLevel - 1].quantitiesRequiredForUpgrading)
+            quantityNeededForUpgrading += quantity;
+    }
+
+    public void Interact()  // Ya no se usa
     {
 
         /*if (UIManager.Instance.IsOpen)
@@ -68,7 +93,7 @@ public class Building : MonoBehaviour, IInteractable
         }*/
         if (UIManager.Instance.IsOpen)
         {
-            UIManager.Instance.InteractableSelected(this);
+            //UIManager.Instance.InteractableSelected(this);
         }
         
         if (CameraController.Instance.ActiveWorker != null)
@@ -92,7 +117,14 @@ public class Building : MonoBehaviour, IInteractable
     }
 
     public virtual void DoEffectAfterWork(){
-        GenerateResource();
+        if (upgradeMode)
+        {
+            Upgrade();
+        }
+        else
+        {
+            GenerateResource();
+        }
     }
 
     public void TryUpgrade()
@@ -115,6 +147,7 @@ public class Building : MonoBehaviour, IInteractable
     {
         for(int i = 0; i < _generation[_upgradeLevel - 1].resourcesRequiredForUpgrading.Length; i++)
         {
+            //if(!(quantitiesDroppedForUpgrading[i] >= _generation[_upgradeLevel - 1].quantitiesRequiredForUpgrading[i]))
             if(!ResourcesManager.Instance.HasEnough(_generation[_upgradeLevel - 1].resourcesRequiredForUpgrading[i], _generation[_upgradeLevel - 1].quantitiesRequiredForUpgrading[i]))
             {
                 return false;
@@ -127,68 +160,116 @@ public class Building : MonoBehaviour, IInteractable
     private void Upgrade()
     {
         // TODO - Add VFX and SFX on Upgrade
-        for (int i = 0; i < _generation[_upgradeLevel - 1].resourcesRequiredForUpgrading.Length; i++)
+        /*for (int i = 0; i < _generation[_upgradeLevel - 1].resourcesRequiredForUpgrading.Length; i++)
         {
             ResourcesManager.Instance.SubtractResource(_generation[_upgradeLevel - 1].resourcesRequiredForUpgrading[i], _generation[_upgradeLevel - 1].quantitiesRequiredForUpgrading[i]);
-        }
+        }*/
+
+
         _upgradeLevel++;
+        ToggleUpgradeMode();
+
+        // TEMPORAL
+        UIManager.Instance.HideSelectedUI();
+
+
         CalculateQuantitiesNeeded();
-        //Debug.Log($"Building {gameObject.name} has been upgraded to level {_upgradeLevel}.");
+        CalculateQuantitiesNeededForUpgrading();
+        Debug.Log($"Building {gameObject.name} has been upgraded to level {_upgradeLevel}.");
 
-
-        // Just change flag, that will change the main loops
-        // quitar quantities dropped al poner el flag
-        // el quantity dropped debe ser 0 y el Quantity needed que sea el required for upgrade, no el for generation
-        // también cambiar el fetch con el flag y el drop
-        // y el DoAfterWork() del Working
     }
     
     public void ToggleUpgradeMode()
     {
-        /*if (upgradeMode)
+        if (upgradeMode)
         {
+            //upgradeMode = !upgradeMode;
+            //_upgradingFlag.SetActive(upgradeMode);
             upgradeMode = false;
             _upgradingFlag.SetActive(false);
+
+            // quitar los quantities dropped
+            for(int i = 0; i < quantitiesDroppedForUpgrading.Length; i++)
+            {
+                quantitiesDroppedForUpgrading[i] = 0;
+            }
         }
         else
         {
-            // se enciende
             upgradeMode = true;
             _upgradingFlag.SetActive(true);
-        }*/
 
-        upgradeMode = !upgradeMode;
-        _upgradingFlag.SetActive(upgradeMode);
+            // quitar los quantities dropped
+            for(int i = 0; i < quantitiesDropped.Length; i++)
+            {
+                quantitiesDropped[i] = 0;
+            }
+        }
+        
     }
 
     public Resource GetRequiredResource()
     {
-        for(int i = 0; i < _generation[_upgradeLevel - 1].resourcesRequiredForGeneration.Length; i++)
+        if (upgradeMode)
         {
-            if (quantitiesDropped[i] == _generation[_upgradeLevel - 1].quantitiesRequiredForGeneration[i])
-                continue;
-            else
+            for(int i = 0; i < _generation[_upgradeLevel - 1].resourcesRequiredForUpgrading.Length; i++)
             {
-                return _generation[_upgradeLevel - 1].resourcesRequiredForGeneration[i];
+                if (quantitiesDroppedForUpgrading[i] == _generation[_upgradeLevel - 1].quantitiesRequiredForUpgrading[i])
+                    continue;
+                else
+                {
+                    return _generation[_upgradeLevel - 1].resourcesRequiredForUpgrading[i];
+                }
             }
         }
+        else
+        {
+            for(int i = 0; i < _generation[_upgradeLevel - 1].resourcesRequiredForGeneration.Length; i++)
+            {
+                if (quantitiesDropped[i] == _generation[_upgradeLevel - 1].quantitiesRequiredForGeneration[i])
+                    continue;
+                else
+                {
+                    return _generation[_upgradeLevel - 1].resourcesRequiredForGeneration[i];
+                }
+            }
+        }
+        
 
         return Resource.None;
     }
 
     public void DropRequiredResource(Resource resource)
     {
-        for (int i = 0; i < _generation[_upgradeLevel - 1].resourcesRequiredForGeneration.Length; i++)
+        if (upgradeMode)
         {
-            if (_generation[_upgradeLevel - 1].resourcesRequiredForGeneration[i].Equals(resource))
+            for (int i = 0; i < _generation[_upgradeLevel - 1].resourcesRequiredForUpgrading.Length; i++)
             {
-                if (quantitiesDropped[i] < _generation[_upgradeLevel - 1].quantitiesRequiredForGeneration[i])
+                if (_generation[_upgradeLevel - 1].resourcesRequiredForUpgrading[i].Equals(resource))
                 {
-                    quantitiesDropped[i]++;
-                    break;
+                    if (quantitiesDroppedForUpgrading[i] < _generation[_upgradeLevel - 1].quantitiesRequiredForUpgrading[i])
+                    {
+                        quantitiesDroppedForUpgrading[i]++;
+                        break;
+                    }
                 }
             }
         }
+        else
+        {
+            for (int i = 0; i < _generation[_upgradeLevel - 1].resourcesRequiredForGeneration.Length; i++)
+            {
+                if (_generation[_upgradeLevel - 1].resourcesRequiredForGeneration[i].Equals(resource))
+                {
+                    if (quantitiesDropped[i] < _generation[_upgradeLevel - 1].quantitiesRequiredForGeneration[i])
+                    {
+                        quantitiesDropped[i]++;
+                        break;
+                    }
+                }
+            }
+        }
+        
     }
 
     public Resource GetGeneratedResource()

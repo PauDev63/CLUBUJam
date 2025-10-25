@@ -21,6 +21,10 @@ public class UIManager : MonoBehaviour
     public bool IsOpen { get { return _isOpen; } }
 
     private IInteractable objectSelected;
+    public IInteractable ObjectSelected { get { return objectSelected; } set { objectSelected = value; } }
+
+    [SerializeField] private GameObject _workerSelectedFlag;
+
 
     private void Awake()
     {
@@ -54,18 +58,7 @@ public class UIManager : MonoBehaviour
         GameplayMenuUI.SetActive(false);
         _isOpen = false;
 
-        switch (objectSelected)
-        {
-            case WorkerFSM worker:
-                HideObjectUI(WorkerUI);
-                break;
-            case Plot plot:
-                HideObjectUI(PlotUI);
-                break;
-            case Building building:
-                HideObjectUI(BuildingUI);
-                break;
-        }
+        HideSelectedUI();
 
         objectSelected = null;
 
@@ -83,9 +76,8 @@ public class UIManager : MonoBehaviour
         ShowUIButton.SetActive(false);
     }
 
-    public void InteractableSelected(IInteractable selected)
+    public void HideSelectedUI()
     {
-
         switch (objectSelected)
         {
             case WorkerFSM worker:
@@ -98,7 +90,13 @@ public class UIManager : MonoBehaviour
                 HideObjectUI(BuildingUI);
                 break;
         }
+    }
 
+    //public void InteractableSelected(IInteractable selected)
+    public void ChangeUI(IInteractable selected)
+    {
+
+        HideSelectedUI();
         objectSelected = selected;
 
         switch (selected)
@@ -107,11 +105,11 @@ public class UIManager : MonoBehaviour
                 ShowObjectUI(WorkerUI);
                 break;
             case Plot plot:
-                _buildPlotButton.interactable = (CameraController.Instance.ActiveWorker != null);
+                _buildPlotButton.interactable = !plot.UpgradeMode && plot.HasBuildingResources();
                 ShowObjectUI(PlotUI);
                 break;
             case Building building:
-                _upgradeBuildingButton.interactable = building.CanUpgrade() && building.HasUpgradingResources();
+                _upgradeBuildingButton.interactable = !building.UpgradeMode && building.CanUpgrade();
                 ShowObjectUI(BuildingUI);
                 break;
         }
@@ -129,7 +127,7 @@ public class UIManager : MonoBehaviour
         //Show the information of objectSelected
     }
 
-    public void SelectWorker()
+    public void SelectWorker()  // Not used
     {
         if (objectSelected is WorkerFSM worker)
         {
@@ -156,10 +154,11 @@ public class UIManager : MonoBehaviour
             CameraController.Instance.ActiveWorker = worker;
 
             //hacer que la UI del worker sea fija
+            _workerSelectedFlag.SetActive(true);
         }
     }
 
-    public void AssignTaskBuilding()
+    public void AssignTaskBuilding()    // Not used
     {
         // comprobar si hay worker seleccionado
         //CameraController.Instance.ActiveWorker.QueueTask(_task);      //cómo lo hacemos con la task? hacer método en Building?
@@ -189,7 +188,7 @@ public class UIManager : MonoBehaviour
         }
 
     }
-    
+
     public void BuildPlot()
     {
         // comprobar si hay worker seleccionado
@@ -197,13 +196,18 @@ public class UIManager : MonoBehaviour
 
         if (objectSelected is Plot plot)
         {
-            //plot.ConstructBuilding();   // pasar el tipo de edificio seleccionado???
-
-            // NO es ConstructBuilding() porque eso es para cuando ha terminado, será asignar su tarea al worker
-            CameraController.Instance.ActiveWorker.QueueTask(plot.BuildingTask);
+            //CameraController.Instance.ActiveWorker.QueueTask(plot.BuildingTask);
             _buildPlotButton.interactable = false;
             CameraController.Instance.ActiveWorker = null;
+
+            // setea una flag y la siguiente assign task del propio edificio asignará la tarea de Upgrade
+            plot.ToggleUpgradeMode();
         }
+    }
+    
+    public void DeselectWorker()
+    {
+        _workerSelectedFlag.SetActive(false);
     }
 
 }
