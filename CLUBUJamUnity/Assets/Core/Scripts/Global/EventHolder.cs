@@ -9,6 +9,8 @@ public class EventHolder : MonoBehaviour
     [NonSerialized] public UnityEvent onTick;
     [NonSerialized] public UnityEvent onInteract;
     [NonSerialized] public UnityEvent onZoomChange;
+    [NonSerialized] public UnityEvent onPause;
+    [NonSerialized] public UnityEvent onExitUI;
 
     void Awake()
     {
@@ -20,5 +22,8 @@ public class EventHolder : MonoBehaviour
         onTick = new UnityEvent();
         onInteract = new UnityEvent();
         onZoomChange = new UnityEvent();
+
+        onPause = new UnityEvent();
+        onExitUI = new UnityEvent();
     }
 }

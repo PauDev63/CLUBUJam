@@ -41,10 +41,14 @@ public class InteractionManager : MonoBehaviour
 
         _inputActions.Gameplay.Zoom.performed += Zoom;
 
+        _inputActions.Gameplay.Pause.performed += Pause;
+
         _mousePositionInputAction = _inputActions.Gameplay.CursorPosition;
         _mouseDeltaInputAction = _inputActions.Gameplay.Drag;
 
         _inputActions.Gameplay.Enable();
+
+        _inputActions.UI.ExitUI.performed += ExitUI;
     }
 
     private void Update()
@@ -82,4 +86,28 @@ public class InteractionManager : MonoBehaviour
         _zoomLevel = context.ReadValue<Vector2>().y;
         EventHolder.Instance.onZoomChange?.Invoke();
     }
+
+    private void Pause(InputAction.CallbackContext context)
+    {
+        EventHolder.Instance.onPause?.Invoke();
+    }
+
+    public void SwitchToGameplay()
+    {
+        _inputActions.UI.Disable();
+        _inputActions.Gameplay.Enable();
+    }
+
+    public void SwitchToUI()
+    {
+        _inputActions.Gameplay.Disable();
+        _inputActions.UI.Enable();
+    }
+
+
+    private void ExitUI(InputAction.CallbackContext context)
+    {
+        EventHolder.Instance.onExitUI?.Invoke();
+    }
+    
 }

@@ -118,27 +118,53 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
         hasWorkedDuringThisTask = false;
         _targetBuilding = currentTask.targetBuilding;
 
-        //get task step (task as an array of TaskStep)
-        if(_targetBuilding.QuantityNeeded > 0)
+        // Fetch required loop
+        if (_targetBuilding.UpgradeMode)    // Loop del upgrade y del build
         {
-            if(_targetBuilding.QuantityGenerated == 0)
+            if (_targetBuilding.QuantityNeededForUpgrading > 0)     //aquí está el problema, el Plot no usa el Upgrading
             {
-                for (int i = 0; i < currentTask.resourcesNeededSteps.Length; i++)
+                if (_targetBuilding.QuantityGenerated == 0)     // Necesario para el upgrade???
                 {
-                    currentTaskStep = currentTask.resourcesNeededSteps[i];
-                    DoTaskStep();
-                    Debug.Log($"Preworking Current task step: {currentTaskStep}");
-                    yield return new WaitUntil(() => doNextTaskStep); // WaitUntilTheTaskStepIsDone
-                    doNextTaskStep = false;
-
-                    if (_targetBuilding.QuantityDropped != _targetBuilding.QuantityNeeded && i == currentTask.resourcesNeededSteps.Length-1)
+                    for (int i = 0; i < currentTask.resourcesNeededSteps.Length; i++)
                     {
-                        i = -1;
+                        currentTaskStep = currentTask.resourcesNeededSteps[i];
+                        DoTaskStep();
+                        Debug.Log($"Preworking UPGRADE Current task step: {currentTaskStep}");
+                        yield return new WaitUntil(() => doNextTaskStep); // WaitUntilTheTaskStepIsDone
+                        doNextTaskStep = false;
+
+                        if (_targetBuilding.QuantityDroppedForUpgrading != _targetBuilding.QuantityNeededForUpgrading && i == currentTask.resourcesNeededSteps.Length - 1)
+                        {
+                            i = -1;
+                        }
+                    }
+                }
+            }
+        }
+        else    // Loop del Work
+        {
+            if (_targetBuilding.QuantityNeeded > 0)
+            {
+                if (_targetBuilding.QuantityGenerated == 0)
+                {
+                    for (int i = 0; i < currentTask.resourcesNeededSteps.Length; i++)
+                    {
+                        currentTaskStep = currentTask.resourcesNeededSteps[i];
+                        DoTaskStep();
+                        Debug.Log($"Preworking Current task step: {currentTaskStep}");
+                        yield return new WaitUntil(() => doNextTaskStep); // WaitUntilTheTaskStepIsDone
+                        doNextTaskStep = false;
+
+                        if (_targetBuilding.QuantityDropped != _targetBuilding.QuantityNeeded && i == currentTask.resourcesNeededSteps.Length - 1)
+                        {
+                            i = -1;
+                        }
                     }
                 }
             }
         }
 
+        // Working loop
         if (_targetBuilding.QuantityGenerated == 0)
         {
             for (int i = 0; i < currentTask.workingSteps.Length; i++)
@@ -153,52 +179,65 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
 
         hasWorkedDuringThisTask = true;
 
-        //get task step (task as an array of TaskStep)
-        for (int i = 0; i < currentTask.resourcesGeneratedSteps.Length; i++)
+        if (!_targetBuilding.UpgradeMode)
         {
-            currentTaskStep = currentTask.resourcesGeneratedSteps[i];
-            DoTaskStep();
-            Debug.Log($"After Working Current task step: {currentTaskStep}");
-            yield return new WaitUntil(() => doNextTaskStep); // WaitUntilTheTaskStepIsDone
-            doNextTaskStep = false;
-
-            if (_targetBuilding.QuantityGenerated > 0 && i == currentTask.resourcesGeneratedSteps.Length-1)
+            // Fetch generated loop
+            for (int i = 0; i < currentTask.resourcesGeneratedSteps.Length; i++)
             {
-                i = -1;
+                currentTaskStep = currentTask.resourcesGeneratedSteps[i];
+                DoTaskStep();
+                Debug.Log($"After Working Current task step: {currentTaskStep}");
+                yield return new WaitUntil(() => doNextTaskStep); // WaitUntilTheTaskStepIsDone
+                doNextTaskStep = false;
+
+                if (_targetBuilding.QuantityGenerated > 0 && i == currentTask.resourcesGeneratedSteps.Length - 1)
+                {
+                    i = -1;
+                }
             }
+        }
+        else
+        {
+            // No se recogen recursos tras el UpgradeMode
         }
 
         StopCurrentTask();
     }
 
     public void DoTaskStep(){
-        
-        switch(currentTaskStep){
-            case TaskStep.Fetch:
-                if(hasWorkedDuringThisTask)
+
+        if (_targetBuilding != null)
+        {
+
+
+            switch (currentTaskStep)
+            {
+                case TaskStep.Fetch:
+                    if (hasWorkedDuringThisTask)
+                        _targetDestination = _targetBuilding.transform.position;
+                    else
+                        _targetDestination = _townHall.position;
+                    break;
+                case TaskStep.Work:
                     _targetDestination = _targetBuilding.transform.position;
-                else
+                    LowerHealth();
+                    break;
+                case TaskStep.Drop:
+                    if (hasWorkedDuringThisTask)
+                        _targetDestination = _townHall.position;
+                    else
+                        _targetDestination = _targetBuilding.transform.position;
+                    LowerHealth();
+                    break;
+                case TaskStep.Return:
                     _targetDestination = _townHall.position;
-                break;
-            case TaskStep.Work:
-                _targetDestination = _targetBuilding.transform.position;
-                LowerHealth();
-                break;
-            case TaskStep.Drop:
-                if (hasWorkedDuringThisTask)
-                    _targetDestination = _townHall.position;
-                else
-                    _targetDestination = _targetBuilding.transform.position;
-                LowerHealth();
-                break;
-            case TaskStep.Return:
-                _targetDestination = _townHall.position;
-                break;
-            default:
-                Debug.Log("Couldn't process task step");
-                break;
-        }        
-        navMeshAgent.SetDestination( _targetDestination );  
+                    break;
+                default:
+                    Debug.Log("Couldn't process task step");
+                    break;
+            }
+            navMeshAgent.SetDestination(_targetDestination);
+        }
     }
 
     public void StopCurrentTask(){
@@ -247,11 +286,22 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
         doNextTaskStep = true;
     }
 
-    public void Interact()
+    public void Interact()      // No se usa
     {
         //_workerFSM.QueueTask(_task);
         Debug.Log("Worker selected");
-        CameraController.Instance.ActiveWorker = this;
+        //CameraController.Instance.ActiveWorker = this;
+
+        if (UIManager.Instance.IsOpen)
+        {
+            // mostrar worker en UI y ahí hacer el select
+            //UIManager.Instance.InteractableSelected(this);
+        }
+        else
+        {
+            CameraController.Instance.ActiveWorker = this;
+        }
+        
     }
 
 }

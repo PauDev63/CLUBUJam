@@ -56,21 +56,6 @@ public class CameraController : MonoBehaviour //FSMTemplateMachine
         }
     }
 
-    /*private void Awake()
-    {
-        nonSelectedState = new nonSelected(this);
-        _cam = GetComponent<Camera>();
-
-        _activeWorker = null;
-
-    }
-
-    protected override void GetInitialState(out FSMTemplateState stateMachine)
-    {
-        stateMachine = nonSelectedState;
-    }*/
-
-
     void TryInteract()
     {
         Ray ray = _cam.ScreenPointToRay(InteractionManager.Instance.MousePosition);
@@ -78,8 +63,41 @@ public class CameraController : MonoBehaviour //FSMTemplateMachine
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, _layerMask))
         {
             if (hit.collider.gameObject.GetComponent<IInteractable>() != null)
-                hit.collider.gameObject.GetComponent<IInteractable>().Interact();
+            {
+                //hit.collider.gameObject.GetComponent<IInteractable>().Interact();
+                InteractableSelected(hit.collider.gameObject.GetComponent<IInteractable>());
+            }
         }
+    }
+
+
+    private void InteractableSelected(IInteractable selected)
+    {
+        if (ActiveWorker == null)
+        {
+            UIManager.Instance.ChangeUI(selected);
+        }
+        else
+        {
+            if (selected is Plot plot)  // Separar porque el Plot no asigna nada si no está en UpgradeMode
+            {
+                if (plot.UpgradeMode)
+                {
+                    ActiveWorker.QueueTask(plot.BuildingTask);
+                    ActiveWorker = null;
+                    UIManager.Instance.DeselectWorker();
+                }
+                
+            }
+            else if (selected is Building building)
+            {
+                ActiveWorker.QueueTask(building.BuildingTask);
+                ActiveWorker = null;
+                UIManager.Instance.DeselectWorker();
+            }
+        }
+
+        
     }
 
     private void Zoom()

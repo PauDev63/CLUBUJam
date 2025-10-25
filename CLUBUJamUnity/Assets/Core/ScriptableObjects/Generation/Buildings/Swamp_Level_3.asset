@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80682fc7ead221144a715e1865644b3f, type: 3}
-  m_Name: PlotToHouse
+  m_Name: Swamp_Level_3
   m_EditorClassIdentifier: 
-  resourcesRequiredForGeneration: 040000000200000005000000
-  quantitiesRequiredForGeneration: 020000000200000002000000
+  resourcesRequiredForGeneration: 
+  quantitiesRequiredForGeneration: 
   resourcesRequiredForUpgrading: 
   quantitiesRequiredForUpgrading: 
-  resourceGenerated: 0
-  quantityGenerated: 0
+  resourceGenerated: 2
+  quantityGenerated: 6
