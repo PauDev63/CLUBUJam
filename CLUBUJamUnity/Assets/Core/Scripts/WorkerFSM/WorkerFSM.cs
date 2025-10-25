@@ -24,6 +24,8 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
 
     [SerializeField] private Vector3 _targetDestination;
 
+    [Header("Tasks Settings")]
+
     public float Progress { get { return _progress; } set { _progress = value; } }
     public float ProgressSpeed { get { return _progressSpeed; } set { _progressSpeed = value; } }
     public Building TargetBuilding { get { return _targetBuilding; } set { _targetBuilding = value; } }
@@ -52,6 +54,12 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
     public Resource CurrentResource { get { return currentResource; } set { currentResource = value; } }
 
     private Coroutine executingTaskCoroutine;
+
+    [Header("Animation")]
+    [SerializeField] private GameObject _visualResource;
+    [SerializeField] private Sprite[] resourceSprites;
+    [SerializeField] private Animator _animatorWorker;
+    public Animator AnimatorWorker { get { return _animatorWorker; } }
 
 
 
@@ -301,7 +309,18 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
         {
             CameraController.Instance.ActiveWorker = this;
         }
-        
+
+    }
+    
+    public void ShowResource(bool show)
+    {
+        if (show)
+        {
+            //cambiar sprite
+            _visualResource.GetComponent<SpriteRenderer>().sprite = resourceSprites[((int)currentResource) - 1];
+        }
+
+        _visualResource.SetActive(show);
     }
 
 }

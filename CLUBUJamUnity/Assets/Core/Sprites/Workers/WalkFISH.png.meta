@@ -1,0 +1,1042 @@
+fileFormatVersion: 2
+guid: 34eb110c660a0344cba20300648ed606
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 120
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WalkFISH_0
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1641
+        width: 242
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6a052825a8cf264c8668bdb79004158
+      internalID: -1419782681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_1
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 1649
+        width: 251
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb9436119582834e9b9e5384088bd76
+      internalID: 1346217191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_2
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 1645
+        width: 258
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0340a5d2bc8ed35438d2ca57f0928921
+      internalID: -1249311933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_3
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 1643
+        width: 262
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5da1821a4687b64d9494e67a660850f
+      internalID: 2017224317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_4
+      rect:
+        serializedVersion: 2
+        x: 2401
+        y: 1641
+        width: 268
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f48ca15c78327394da81028d196e3cd5
+      internalID: 57875156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_5
+      rect:
+        serializedVersion: 2
+        x: 2972
+        y: 1639
+        width: 271
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b1225ab78dc53e449e52505d41f845c
+      internalID: -1583474732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_6
+      rect:
+        serializedVersion: 2
+        x: 3544
+        y: 1637
+        width: 273
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b969181fd2602514a90336f0e58b203f
+      internalID: -981746610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_7
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1315
+        width: 277
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e3daceed095af247917869796b8ce77
+      internalID: -869185787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_8
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 1315
+        width: 278
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e080ca5066cadc4aa33820caaca8258
+      internalID: 849910578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_9
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 1313
+        width: 277
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a43fabb5d9ba424da661472ed21e276
+      internalID: 29258088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_10
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 1310
+        width: 277
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af918903f3cb17445925255bbb6bad9c
+      internalID: -1712099401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_13
+      rect:
+        serializedVersion: 2
+        x: 2409
+        y: 1311
+        width: 276
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c4e890e0b72469408982371357f001b
+      internalID: -1081527376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_15
+      rect:
+        serializedVersion: 2
+        x: 2981
+        y: 1313
+        width: 276
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f2db4f4b79821347adb9db73d3f2a01
+      internalID: 703844891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_17
+      rect:
+        serializedVersion: 2
+        x: 3556
+        y: 1313
+        width: 271
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e8acd685fee19c4da755a4e17a661b0
+      internalID: 543260000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_19
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 997
+        width: 269
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bee5a5b2bdac6a47ae9986183d25b39
+      internalID: -1634842772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_20
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1001
+        width: 267
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 503c8a7b8c29ba3458bf90f80f0b668e
+      internalID: -1319774400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_21
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 1003
+        width: 264
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 737e1b26791e76c4ab3798fe7430f9bf
+      internalID: 444192473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_22
+      rect:
+        serializedVersion: 2
+        x: 1854
+        y: 1005
+        width: 258
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92695a0731b6da5449196130489f632e
+      internalID: 1835109910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_23
+      rect:
+        serializedVersion: 2
+        x: 2429
+        y: 1005
+        width: 254
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c872fedb3199abf47b5056623cba2718
+      internalID: 130584743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_24
+      rect:
+        serializedVersion: 2
+        x: 3005
+        y: 999
+        width: 248
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d13c8b785a0e241bdb0683846ad770
+      internalID: -2075494868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_25
+      rect:
+        serializedVersion: 2
+        x: 3581
+        y: 993
+        width: 240
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e7260494a7bd97438eaf86f31c47a2d
+      internalID: 72695186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_26
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 677
+        width: 247
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d05d91e8231d7da4e8256c809f7e15a2
+      internalID: -910919836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_27
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 684
+        width: 250
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7aae2bdc810bb1469fe4d6459d52979
+      internalID: 1385833112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_28
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 684
+        width: 254
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a2c22c1d63a0f4e9519fc3522a2463
+      internalID: 565532839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_29
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 682
+        width: 257
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f375383df2edf3544b9e198a999ceebf
+      internalID: 962550753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_30
+      rect:
+        serializedVersion: 2
+        x: 2420
+        y: 680
+        width: 260
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3f4767b04552843ba2d4c76c1483d5
+      internalID: 1692466090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_31
+      rect:
+        serializedVersion: 2
+        x: 2989
+        y: 677
+        width: 264
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37594b60961b49e40b02ff0f9c22fc7c
+      internalID: -1564456873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_32
+      rect:
+        serializedVersion: 2
+        x: 3560
+        y: 677
+        width: 263
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c36e70d728e2a3441aa70ff43c6eeb9f
+      internalID: -1427774488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_33
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 352
+        width: 267
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb662bf63de29c4c98c06f20675eabb
+      internalID: 1109589705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_34
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 350
+        width: 272
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55cc415779c31f94081cf5de54470021
+      internalID: 1789815795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_35
+      rect:
+        serializedVersion: 2
+        x: 1267
+        y: 349
+        width: 271
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f2f99e5921fe9f4b80205e64871f9b2
+      internalID: 1039223763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_36
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 349
+        width: 275
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b95ac617bb7d5946a3b5cc1f1124459
+      internalID: 1604634621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_37
+      rect:
+        serializedVersion: 2
+        x: 2403
+        y: 349
+        width: 278
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5912957c34c9c3f4f86d3a6fe80cd07d
+      internalID: -1789674385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_38
+      rect:
+        serializedVersion: 2
+        x: 2974
+        y: 350
+        width: 275
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a5e97bdca4c12e4cbd0ae1fe9428723
+      internalID: -461696298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_39
+      rect:
+        serializedVersion: 2
+        x: 3544
+        y: 351
+        width: 275
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 095fb367b5af5be419a56b3541ca67cc
+      internalID: -758749678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_40
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 30
+        width: 274
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9043b978a8444d4d86c08b75ea90716
+      internalID: 845477419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_41
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 32
+        width: 271
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf80d716882a834aa98db0e6eef4ece
+      internalID: -214339805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_42
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 36
+        width: 267
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36a2a0a676448d9478213c443837e0a0
+      internalID: 718332344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_43
+      rect:
+        serializedVersion: 2
+        x: 1827
+        y: 38
+        width: 262
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14455a41d27fcd542ad4e415223a27da
+      internalID: -2069589768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkFISH_44
+      rect:
+        serializedVersion: 2
+        x: 2399
+        y: 42
+        width: 256
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1417261f84860ab4484056d946911b45
+      internalID: -1932814875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 16ac393c434060d4786da65a5657a20a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      WalkFISH_0: -1419782681
+      WalkFISH_1: 1346217191
+      WalkFISH_10: -1712099401
+      WalkFISH_11: -1093424351
+      WalkFISH_12: 1252025718
+      WalkFISH_13: -1081527376
+      WalkFISH_14: 437652745
+      WalkFISH_15: 703844891
+      WalkFISH_16: -1548352438
+      WalkFISH_17: 543260000
+      WalkFISH_18: 943462217
+      WalkFISH_19: -1634842772
+      WalkFISH_2: -1249311933
+      WalkFISH_20: -1319774400
+      WalkFISH_21: 444192473
+      WalkFISH_22: 1835109910
+      WalkFISH_23: 130584743
+      WalkFISH_24: -2075494868
+      WalkFISH_25: 72695186
+      WalkFISH_26: -910919836
+      WalkFISH_27: 1385833112
+      WalkFISH_28: 565532839
+      WalkFISH_29: 962550753
+      WalkFISH_3: 2017224317
+      WalkFISH_30: 1692466090
+      WalkFISH_31: -1564456873
+      WalkFISH_32: -1427774488
+      WalkFISH_33: 1109589705
+      WalkFISH_34: 1789815795
+      WalkFISH_35: 1039223763
+      WalkFISH_36: 1604634621
+      WalkFISH_37: -1789674385
+      WalkFISH_38: -461696298
+      WalkFISH_39: -758749678
+      WalkFISH_4: 57875156
+      WalkFISH_40: 845477419
+      WalkFISH_41: -214339805
+      WalkFISH_42: 718332344
+      WalkFISH_43: -2069589768
+      WalkFISH_44: -1932814875
+      WalkFISH_5: -1583474732
+      WalkFISH_6: -981746610
+      WalkFISH_7: -869185787
+      WalkFISH_8: 849910578
+      WalkFISH_9: 29258088
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

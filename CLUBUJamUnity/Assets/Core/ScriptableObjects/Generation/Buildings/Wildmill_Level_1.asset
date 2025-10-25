@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcesRequiredForGeneration: 01000000
   quantitiesRequiredForGeneration: 01000000
-  resourcesRequiredForUpgrading: 01000000
+  resourcesRequiredForUpgrading: 09000000
   quantitiesRequiredForUpgrading: 04000000
-  resourceGenerated: 4
+  resourceGenerated: 8
   quantityGenerated: 3

@@ -18,6 +18,7 @@ public class Fetch : WorkerStateTemplate
             if (ResourcesManager.Instance.HasEnough(_workerFSM.TargetBuilding.GetRequiredResource(), 1))
             {
                 _workerFSM.CurrentResource = _workerFSM.TargetBuilding.GetRequiredResource();
+                _workerFSM.ShowResource(true);
                 ResourcesManager.Instance.SubtractResource(_workerFSM.CurrentResource, 1);
                 Debug.Log($"Player fetched this {_workerFSM.CurrentResource}, there are: {ResourcesManager.Instance.GetResourceQuantity(_workerFSM.CurrentResource)}");
             }
@@ -30,7 +31,10 @@ public class Fetch : WorkerStateTemplate
         else
         {
             if (_workerFSM.TargetBuilding.QuantityGenerated > 0)
+            {
                 _workerFSM.CurrentResource = _workerFSM.TargetBuilding.GetGeneratedResource();
+                _workerFSM.ShowResource(true);
+            }
             else
             {
                 _workerFSM.StopCurrentTask();

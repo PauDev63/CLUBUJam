@@ -11,6 +11,15 @@ public class Walking : WorkerStateTemplate
     {
         //Debug.Log("Walking: enter");
         _workerFSM.NavMeshAgent.SetDestination(_workerFSM.TargetDestination);
+        if(_workerFSM.CurrentResource != Resource.None)
+        {
+            _workerFSM.AnimatorWorker.Play("CarryOnFish");
+        }
+        else
+        {
+            _workerFSM.AnimatorWorker.Play("FiskWalk");    
+        }
+        
         if (_workerFSM.NavMeshAgent.isStopped)
             _workerFSM.NavMeshAgent.isStopped = false;
     }

@@ -14,6 +14,7 @@ public class Idle : WorkerStateTemplate
     {
         //Debug.Log("Idle: enter");
         _stopTime = Random.Range(_workerFSM.MinIdlingTime, _workerFSM.MaxIdlingTime);
+        _workerFSM.AnimatorWorker.Play("IdleFish");
     }
 
     public override void UpdateLogic()
