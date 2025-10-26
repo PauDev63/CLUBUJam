@@ -69,15 +69,8 @@ public class PauseManager : MonoBehaviour
 
     public void ToggleMute()
     {
-        if (_isMute)
-        {
-            // turn on sound
-        }
-        else
-        {
-            // turn off sound
-        }
-            
+        _isMute = !_isMute;
+        AudioManager.Instance.SetMute(_isMute);
     }
 
 }
