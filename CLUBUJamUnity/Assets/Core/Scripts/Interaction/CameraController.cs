@@ -1,5 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
+using System.Collections.Generic;
+using System.Collections;
+using System;
 
 public class CameraController : MonoBehaviour //FSMTemplateMachine
 {
@@ -11,6 +15,12 @@ public class CameraController : MonoBehaviour //FSMTemplateMachine
     [SerializeField] private float _maxZoomHeight;
     [SerializeField] private float _zoomSpeed;
     [SerializeField] private float _panSpeed;
+
+    [Header("Limits")]
+    [SerializeField] private float _maxX;
+    [SerializeField] private float _minX;
+    [SerializeField] private float _maxZ;
+    [SerializeField] private float _minZ;
 
     private WorkerFSM activeWorker;
     public WorkerFSM ActiveWorker { get { return activeWorker; } set { activeWorker = value; } }
@@ -56,19 +66,30 @@ public class CameraController : MonoBehaviour //FSMTemplateMachine
         }
     }
 
-    void TryInteract()
+    public void TryInteract()
     {
+        StartCoroutine(DeferredInteraction());      // Si se hace todo en el TryInteract(), hay un Warning
+    }
+
+    private IEnumerator DeferredInteraction()
+    {
+        yield return null;
+
+        if (EventSystem.current.IsPointerOverGameObject())      // Cambio para que el Raycast no pase de la UI
+            yield break;
+
         Ray ray = _cam.ScreenPointToRay(InteractionManager.Instance.MousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, _layerMask))
         {
-            if (hit.collider.gameObject.GetComponent<IInteractable>() != null)
+            var interactable = hit.collider.GetComponentInParent<IInteractable>();
+            if (interactable != null)
             {
-                //hit.collider.gameObject.GetComponent<IInteractable>().Interact();
-                InteractableSelected(hit.collider.gameObject.GetComponent<IInteractable>());
+                InteractableSelected(interactable);
             }
         }
     }
+
 
 
     private void InteractableSelected(IInteractable selected)
@@ -121,7 +142,19 @@ public class CameraController : MonoBehaviour //FSMTemplateMachine
         forward.y = 0;
         right.y = 0;
 
-        transform.Translate(forward * InteractionManager.Instance.MouseDelta.y * _panSpeed * Time.deltaTime, Space.World);
-        transform.Translate(right * InteractionManager.Instance.MouseDelta.x * _panSpeed * Time.deltaTime, Space.World);
+        // Movimiento normal
+        Vector3 movement =
+            forward * InteractionManager.Instance.MouseDelta.y * _panSpeed * Time.deltaTime +
+            right * InteractionManager.Instance.MouseDelta.x * _panSpeed * Time.deltaTime;
+
+        transform.position += movement;
+
+        // Aplicar límites a la posición final
+        Vector3 pos = transform.position;
+
+        pos.x = Mathf.Clamp(pos.x, _minX, _maxX);
+        pos.z = Mathf.Clamp(pos.z, _minZ, _maxZ);
+
+        transform.position = pos;
     }
 }

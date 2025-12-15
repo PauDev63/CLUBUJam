@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80682fc7ead221144a715e1865644b3f, type: 3}
   m_Name: Windmill_Level_3
   m_EditorClassIdentifier: 
-  resourcesRequiredForGeneration: 00000000
-  quantitiesRequiredForGeneration: 05000000
+  resourcesRequiredForGeneration: 09000000
+  quantitiesRequiredForGeneration: 04000000
   resourcesRequiredForUpgrading: 
   quantitiesRequiredForUpgrading: 
   resourceGenerated: 8
-  quantityGenerated: 9
+  quantityGenerated: 4
+  buildingSprite: {fileID: 21300000, guid: 74143ecd890f4b941985c352918767b5, type: 3}
