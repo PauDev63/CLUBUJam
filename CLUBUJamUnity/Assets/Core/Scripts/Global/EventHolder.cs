@@ -11,6 +11,7 @@ public class EventHolder : MonoBehaviour
     [NonSerialized] public UnityEvent onZoomChange;
     [NonSerialized] public UnityEvent onPause;
     [NonSerialized] public UnityEvent onExitUI;
+    [NonSerialized] public UnityEvent onUpdateGameUI;
 
     void Awake()
     {
@@ -25,5 +26,13 @@ public class EventHolder : MonoBehaviour
 
         onPause = new UnityEvent();
         onExitUI = new UnityEvent();
+
+        // For Game UI
+        /*onSelectedObject = new UnityEvent();
+        onUpgradedBuilding = new UnityEvent();
+        onWorkerResourceChanged = new UnityEvent();
+        onTaskChanged = new UnityEvent();
+        onEnergyChanged = new UnityEvent();*/
+        onUpdateGameUI = new UnityEvent();
     }
 }

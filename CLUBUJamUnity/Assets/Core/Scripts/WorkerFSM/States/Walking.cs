@@ -9,7 +9,7 @@ public class Walking : WorkerStateTemplate
 
     public override void Enter()
     {
-        //Debug.Log("Walking: enter");
+        Debug.Log("Walking: enter");
         _workerFSM.NavMeshAgent.SetDestination(_workerFSM.TargetDestination);
         if(_workerFSM.CurrentResource != Resource.None)
         {
@@ -53,7 +53,7 @@ public class Walking : WorkerStateTemplate
 
     public override void Exit()
     {
-        //Debug.Log("Walking: exit");
+        Debug.Log("Walking: exit");
         _workerFSM.NavMeshAgent.isStopped = true;
     }
 }

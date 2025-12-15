@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourcesRequiredForGeneration: 
   quantitiesRequiredForGeneration: 
-  resourcesRequiredForUpgrading: 09000000
+  resourcesRequiredForUpgrading: 01000000
   quantitiesRequiredForUpgrading: 0f000000
   resourceGenerated: 9
   quantityGenerated: 3
+  buildingSprite: {fileID: 21300000, guid: 79a4a86f81d184d48bc76d5a1513b225, type: 3}

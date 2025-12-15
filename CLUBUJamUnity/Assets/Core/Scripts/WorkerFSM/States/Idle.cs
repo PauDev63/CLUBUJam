@@ -25,13 +25,15 @@ public class Idle : WorkerStateTemplate
         }
         else 
         {
+            //Debug.Log("ON DESTINATION");
             switch (_workerFSM.CurrentTaskStep)
             {
                 case TaskStep.Fetch:
                     _workerFSM.ChangeState(_workerFSM.fetchingState);
                     break;
                 case TaskStep.Work:
-                    _workerFSM.ChangeState(_workerFSM.workingState);
+                    _workerFSM.ChangeState(_workerFSM.workingState);    
+                            // el problema es que hace primero el cambio de TaskStep y se ejecuta esto antes de que se haga el cambio de _targetPosition en workerFSM?????
                     break;
             }
         }

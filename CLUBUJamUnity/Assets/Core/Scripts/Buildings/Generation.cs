@@ -12,4 +12,6 @@ public class Generation : ScriptableObject
     [Space]
     public Resource resourceGenerated;
     public int quantityGenerated;
+    [Space]
+    public Sprite buildingSprite;
 }

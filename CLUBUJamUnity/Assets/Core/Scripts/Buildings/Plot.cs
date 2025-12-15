@@ -9,15 +9,23 @@ public class Plot : Building
         ToggleUpgradeMode();
 
         // TEMPORAL
-        UIManager.Instance.HideSelectedUI();
+        //UIManager.Instance.HideSelectedUI();
+        EventHolder.Instance.onUpdateGameUI?.Invoke();
 
         ConstructBuilding();
     }
 
     private void ConstructBuilding()
     {
-        Instantiate(_building, transform.position, Quaternion.identity, transform.parent);
-        _workerFSM.StopCurrentTask();
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + Vector3.up * 10f, Vector3.down, out hit, 100f))
+        {
+            Vector3 spawnPos = hit.point;
+            spawnPos.y -= 0.5f; // hunde un poco en el suelo
+            Instantiate(_building, spawnPos, Quaternion.identity, transform.parent);
+        }
+
+        //_workerFSM.StopCurrentTask();
         Destroy(gameObject);
     }
 
@@ -34,5 +42,21 @@ public class Plot : Building
 
         return true;
     }
+
+    public Sprite GetFutureBuilding()
+    {
+        return _building.GetComponent<Building>().GetBuildingSprite();
+    }
+
+    public Resource GetFutureResource()
+    {
+        return _building.GetComponent<Building>().GetResourceEnumGenerated();
+    }
+
+    public int GetFutureQuantitiesGenerated()
+    {
+        return _building.GetComponent<Building>().GetAmountGenereted();
+    }
+
 
 }

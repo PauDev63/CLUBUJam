@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         _backgroundMusic.Play();
+        _backgroundMusic.volume = _fixedVolume;
     }
 
     public void SetMute(bool toMute)

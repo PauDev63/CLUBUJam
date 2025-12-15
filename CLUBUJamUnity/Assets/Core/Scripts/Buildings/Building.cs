@@ -18,6 +18,12 @@ public class Building : MonoBehaviour, IInteractable
     [SerializeField] protected GameObject _upgradingFlag;
 
 
+    [Header("Upgrade")]
+    [SerializeField] private GameObject _tier2;
+    [SerializeField] private GameObject _tier3;
+
+
+
     public int QuantityGenerated { get { return quantityGenerated; } }
     public int QuantityNeeded { get { return quantityNeeded; } }
     public int QuantityNeededForUpgrading { get { return quantityNeededForUpgrading; } }
@@ -76,6 +82,11 @@ public class Building : MonoBehaviour, IInteractable
     {
         foreach (int quantity in _generation[_upgradeLevel - 1].quantitiesRequiredForUpgrading)
             quantityNeededForUpgrading += quantity;
+    }
+
+    public Sprite GetBuildingSprite()
+    {
+        return _generation[0].buildingSprite;
     }
 
     public void Interact()  // Ya no se usa
@@ -169,13 +180,25 @@ public class Building : MonoBehaviour, IInteractable
         _upgradeLevel++;
         ToggleUpgradeMode();
 
-        // TEMPORAL
-        UIManager.Instance.HideSelectedUI();
+        switch (_upgradeLevel)
+        {
+            case 2:
+                _tier2.SetActive(true);
+                break;
+            case 3:
+                _tier3.SetActive(true);
+                break;
+        }
+
 
 
         CalculateQuantitiesNeeded();
         CalculateQuantitiesNeededForUpgrading();
         Debug.Log($"Building {gameObject.name} has been upgraded to level {_upgradeLevel}.");
+
+        // TEMPORAL
+        //UIManager.Instance.HideSelectedUI();
+        EventHolder.Instance.onUpdateGameUI?.Invoke();
 
     }
     
@@ -276,5 +299,35 @@ public class Building : MonoBehaviour, IInteractable
     {
         quantityGenerated--;
         return _generation[_upgradeLevel - 1].resourceGenerated;
+    }
+
+    public Resource GetResourceEnumGenerated()
+    {
+        return _generation[_upgradeLevel - 1].resourceGenerated;
+    }
+
+    public Resource GetResourceEnumRequired()
+    {
+        return _generation[_upgradeLevel - 1].resourcesRequiredForGeneration[0];
+    }
+
+    public int GetAmountGenereted()
+    {
+        return _generation[_upgradeLevel - 1].quantityGenerated;
+    }
+
+    public int GetQuantitiesResources()
+    {
+        return _generation[_upgradeLevel - 1].quantitiesRequiredForUpgrading.Length;
+    }
+
+    public Resource GetResourceNeededById(int id)
+    {
+        return _generation[_upgradeLevel - 1].resourcesRequiredForUpgrading[id];
+    }
+
+    public int GetResourceAmountNeededById(int id)
+    {
+        return _generation[_upgradeLevel - 1].quantitiesRequiredForUpgrading[id];
     }
 }

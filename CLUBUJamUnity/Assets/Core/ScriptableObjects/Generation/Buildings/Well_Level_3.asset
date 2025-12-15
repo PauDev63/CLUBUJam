@@ -18,3 +18,4 @@ MonoBehaviour:
   quantitiesRequiredForUpgrading: 
   resourceGenerated: 1
   quantityGenerated: 6
+  buildingSprite: {fileID: 21300000, guid: 0fce3590cdde6b3459bfcb87637beff0, type: 3}

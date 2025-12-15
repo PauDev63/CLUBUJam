@@ -42,10 +42,11 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
     [SerializeField] private int _maxQueuedTasks = 3;
     [SerializeField] private int _workerHealth = 10;
     [SerializeField] private Resource currentResource;
-
     public bool doNextTaskStep;
     private bool hasWorkedDuringThisTask;
     public bool HasWorkedDuringThisTask { get { return hasWorkedDuringThisTask; } }
+    public Queue<Task> TaskQueue { get { return taskQueue; } }
+    public Task CurrentTask { get { return currentTask; } }
 
     private NavMeshAgent navMeshAgent;
     public NavMeshAgent NavMeshAgent { get { return navMeshAgent; } }
@@ -57,9 +58,12 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
 
     [Header("Animation")]
     [SerializeField] private GameObject _visualResource;
-    [SerializeField] private Sprite[] resourceSprites;
     [SerializeField] private Animator _animatorWorker;
     public Animator AnimatorWorker { get { return _animatorWorker; } }
+
+
+
+    private int randomSense = -1;
 
 
 
@@ -74,6 +78,7 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
         taskQueue = new Queue<Task>();
         currentTask = null;
         currentResource = Resource.None;
+        _townHall = ResourcesManager.Instance.TownHall;
 
         navMeshAgent = GetComponent<NavMeshAgent>();
 
@@ -86,9 +91,11 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
 
     public void LowerHealth(){
         _workerHealth--;
-        if(_workerHealth <= 0){
+        if (_workerHealth <= 0)
+        {
             Debug.Log("Se muere");
         }
+        //EventHolder.Instance.onUpdateGameUI?.Invoke();
     }
 
     public bool CanQueue(){
@@ -99,9 +106,12 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
 
         if(CanQueue()){
             taskQueue.Enqueue(newTask);
+            EventHolder.Instance.onUpdateGameUI?.Invoke();
 
             if (currentTask == null)
+            {
                 DoTask();
+            }
         }        
     }
 
@@ -125,6 +135,7 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
     {
         hasWorkedDuringThisTask = false;
         _targetBuilding = currentTask.targetBuilding;
+        EventHolder.Instance.onUpdateGameUI?.Invoke();
 
         // Fetch required loop
         if (_targetBuilding.UpgradeMode)    // Loop del upgrade y del build
@@ -207,6 +218,9 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
         else
         {
             // No se recogen recursos tras el UpgradeMode
+            // Esto no se hace porque tras el Work se hace el ToggleUpgradeMode()
+
+            //Debug.Log("After work sin upgrade");
         }
 
         StopCurrentTask();
@@ -216,7 +230,6 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
 
         if (_targetBuilding != null)
         {
-
 
             switch (currentTaskStep)
             {
@@ -228,6 +241,7 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
                     break;
                 case TaskStep.Work:
                     _targetDestination = _targetBuilding.transform.position;
+                    Debug.Log("Target cambiado");
                     LowerHealth();
                     break;
                 case TaskStep.Drop:
@@ -257,6 +271,7 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
         {
             StopCoroutine(executingTaskCoroutine);
         }
+        EventHolder.Instance.onUpdateGameUI?.Invoke();
         
         if(currentResource != Resource.None){
             // leaves resource it at the town hall
@@ -264,7 +279,7 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
                 // Drop (without losing life)
         }
 
-        if(taskQueue.Count > 0){
+        if(taskQueue != null && taskQueue.Count > 0){
             DoTask();
         }else{
             // Idle
@@ -286,7 +301,15 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
     public void SetRandomDestination()
     {
         //Change this to random destination
-        _targetDestination = Vector3.right * -5f;
+        _targetDestination = Vector3.right * 2f * randomSense;   // Vector3 del personaje ??
+        if(randomSense > 0)
+        {   
+            randomSense = -1;
+        }
+        else
+        {
+            randomSense = 1;
+        }
     }
 
     public void SetNewDestination()
@@ -311,16 +334,18 @@ public class WorkerFSM : FSMTemplateMachine, IInteractable
         }
 
     }
-    
+
     public void ShowResource(bool show)
     {
         if (show)
         {
             //cambiar sprite
-            _visualResource.GetComponent<SpriteRenderer>().sprite = resourceSprites[((int)currentResource) - 1];
+            //_visualResource.GetComponent<SpriteRenderer>().sprite = resourceSprites[((int)currentResource) - 1];
+            _visualResource.GetComponent<SpriteRenderer>().sprite = ResourcesManager.Instance.GetResourceSprite(currentResource);
         }
 
         _visualResource.SetActive(show);
+        EventHolder.Instance.onUpdateGameUI?.Invoke();
     }
 
 }
